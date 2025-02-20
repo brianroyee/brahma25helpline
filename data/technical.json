@@ -1,0 +1,135 @@
+[
+  {
+    "EVENT DATE": "Day 1",
+    "EVENT NAME": "AUTO SHOWCASE",
+    "EVENT TIMES": "09:00 AM",
+    "VENUE": "Main Ground"
+
+  },
+  {
+    "EVENT DATE": "Day 1",
+    "EVENT NAME": "IDEATHON",
+    "EVENT TIMES": "12:00 PM",
+    "VENUE": "EC Seminar Hall"
+  },
+  {
+    "EVENT DATE": "Day 1",
+    "EVENT NAME": "GPTALES",
+    "EVENT TIMES": "12:00 PM",
+    "VENUE": "Deep Learning and ML Lab"
+  },
+  {
+    "EVENT DATE": "Day 2",
+    "EVENT NAME": "MEDISCOPE",
+    "EVENT TIMES": "09:00 AM",
+    "VENUE": "CE Seminar Hall"
+  },
+  {
+    "EVENT DATE": "Day 2",
+    "EVENT NAME": "ROBO RACE",
+    "EVENT TIMES": "09:30 AM",
+    "VENUE": "Main Ground"
+  },
+  {
+    "EVENT DATE": "Day 2",
+    "EVENT NAME": "CODEX CUP",
+    "EVENT TIMES": "09:30 AM",
+    "VENUE": "CCF Lab 10 & 11"
+  },
+  {
+    "EVENT DATE": "Day 2",
+    "EVENT NAME": "ARCHIVIA",
+    "EVENT TIMES": "09:30 AM",
+    "VENUE": "S2 CE Classroom"
+  },
+  {
+    "EVENT DATE": "Day 2",
+    "EVENT NAME": "ARDUINO WORKSHOP",
+    "EVENT TIMES": "10:00 AM",
+    "VENUE": "EC Simulation Lab"
+  },
+  {
+    "EVENT DATE": "Day 2",
+    "EVENT NAME": "DATAVERSE PROJECT EXPO",
+    "EVENT TIMES": "10:00 AM",
+    "VENUE": "EC Seminar Hall"
+  },
+  {
+    "EVENT DATE": "Day 2",
+    "EVENT NAME": "BLOCKONOMICS",
+    "EVENT TIMES": "10:00 AM",
+    "VENUE": "PL Lab"
+  },
+  {
+    "EVENT DATE": "Day 2",
+    "EVENT NAME": "SAMAGRA - A Project Expo",
+    "EVENT TIMES": "10:00 AM",
+    "VENUE": "CCF PARKING"
+  },
+  {
+    "EVENT DATE": "Day 2",
+    "EVENT NAME": "SQUID GAME",
+    "EVENT TIMES": "10:00 AM",
+    "VENUE": "F19"
+  },
+  {
+    "EVENT DATE": "Day 2",
+    "EVENT NAME": "BULB IN THE CITY",
+    "EVENT TIMES": "10:00 AM",
+    "VENUE": "EC Project Lab"
+  },
+  {
+    "EVENT DATE": "Day 2",
+    "EVENT NAME": "SMG Workshop",
+    "EVENT TIMES": "10:00 AM",
+    "VENUE": "ME Seminar Hall"
+  },
+  {
+    "EVENT DATE": "Day 2",
+    "EVENT NAME": "BMW ENGINE WORKSHOP",
+    "EVENT TIMES": "10:00 AM",
+    "VENUE": "ME Thermal Lab"
+  },
+  {
+    "EVENT DATE": "Day 2",
+    "EVENT NAME": "3D SCAPE",
+    "EVENT TIMES": "11:00 AM",
+    "VENUE": "CCF Lab 8"
+  },
+  {
+    "EVENT DATE": "Day 2",
+    "EVENT NAME": "ROBO SOCCER",
+    "EVENT TIMES": "12:00 PM",
+    "VENUE": "Main Ground"
+  },
+  {
+    "EVENT DATE": "Day 2",
+    "EVENT NAME": "OPERATION DARKNOON",
+    "EVENT TIMES": "02:00 PM",
+    "VENUE": "AI Lab"
+  },
+  {
+    "EVENT DATE": "Day 2",
+    "EVENT NAME": "ENGRAVEX",
+    "EVENT TIMES": "02:00 PM",
+    "VENUE": "EC Project Lab"
+  },
+  {
+    "EVENT DATE": "Day 2",
+    "EVENT NAME": "TECH TRIVIA",
+    "EVENT TIMES": "02:00 PM",
+    "VENUE": "ME Seminar Hall"
+  },
+  {
+    "EVENT DATE": "Day 3",
+    "EVENT NAME": "UNITY MASTERY",
+    "EVENT TIMES": "09:30 AM",
+    "VENUE": "CCF Lab 8 & 9"
+  },
+  {
+    "EVENT DATE": "Day 3",
+    "EVENT NAME": "MERN CRAFT",
+    "EVENT TIMES": "09:30 AM",
+    "VENUE": "EC Simulation Lab"
+  }
+]

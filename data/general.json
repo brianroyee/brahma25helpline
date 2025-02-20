@@ -1,0 +1,151 @@
+[
+  {
+    "EVENT DATE": "Day 1",
+    "EVENT NAME": "SPOT PHOTOGRAPHY",
+    "EVENT TIMES": "12:30 PM",
+    "VENUE": "College Premises",
+    "IMAGE": "data/posters/spotphotography.jpeg",
+    "C1": "Adhun Benny : https://wa.me/9496552483",
+    "C2": "Asfan MM : https://wa.me/9745461727"
+  },
+  {
+    "EVENT DATE": "Day 2",
+    "EVENT NAME": "KNIVES OUT",
+    "EVENT TIMES": "10:00 AM ",
+    "VENUE": "S06",
+    "IMAGE": "data/posters/knivesout.jpeg"
+  },
+  {
+    "EVENT DATE": "Day 2",
+    "EVENT NAME": "GAME OF ROOMS",
+    "EVENT TIMES": "10:00 AM",
+    "VENUE": "S07",
+    "IMAGE": "data/posters/gor.jpeg"
+  },
+  {
+    "EVENT DATE": "Day 2",
+    "EVENT NAME": "HANGING BAR",
+    "EVENT TIMES": "10:00 AM",
+    "VENUE": "In Front of Basketball Court",
+    "IMAGE": "data/posters/hb.jpeg"
+  },
+  {
+    "EVENT DATE": "Day 2",
+    "EVENT NAME": "PAINT BALL",
+    "EVENT TIMES": "10:00 AM ",
+    "VENUE": "In Front of CNC Lab",
+    "IMAGE": "data/posters/paintball.jpeg"
+  },
+  {
+    "EVENT DATE": "Day 2",
+    "EVENT NAME": "RETRO CARROMS",
+    "EVENT TIMES": "10:00 AM",
+    "VENUE": "EC Mini Seminar Hall",
+    "IMAGE": "data/posters/carroms.jpeg"
+  },
+  {
+    "EVENT DATE": "Day 2",
+    "EVENT NAME": "FIFA FEVER",
+    "EVENT TIMES": "10:00 AM ",
+    "VENUE": "Microcontroller Lab",
+    "IMAGE": "data/posters/fifafever.jpeg"
+  },
+  {
+    "EVENT DATE": "Day 2",
+    "EVENT NAME": "PRODUCT PIONEERS",
+    "EVENT TIMES": "10:30 AM",
+    "VENUE": "MBA Block",
+    "IMAGE": "data/posters/pp.jpeg"
+  },
+  {
+    "EVENT DATE": "Day 2",
+    "EVENT NAME": "MILTIA MADNESS",
+    "EVENT TIMES": "11:00 AM",
+    "VENUE": "S02",
+    "IMAGE": "data/posters/miltia.jpeg"
+  },
+  {
+    "EVENT DATE": "Day 2",
+    "EVENT NAME": "CLUE CRUSADE",
+    "EVENT TIMES": "11:00 AM",
+    "VENUE": "College Premises",
+    "IMAGE": "data/posters/clue.jpeg"
+  },
+  {
+    "EVENT DATE": "Day 2",
+    "EVENT NAME": "GLOW BALL",
+    "EVENT TIMES": "11:00 AM",
+    "VENUE": "S06",
+    "IMAGE":"data/posters/glowball.jpeg"
+  },
+  {
+    "EVENT DATE": "Day 2",
+    "EVENT NAME": "SOAPY SOCCER ",
+    "EVENT TIMES": "11:00 AM",
+    "VENUE": "College two wheeler parking",
+    "IMAGE": "data/posters/soapy.jpeg"
+  },
+  {
+    "EVENT DATE": "Day 2",
+    "EVENT NAME": "ASIET TALKIES",
+    "EVENT TIMES": "01:00 pm",
+    "VENUE": "Main Seminar Hall",
+    "IMAGE": "data/posters/talkies.jpeg"
+  },
+  {
+    "EVENT DATE": "Day 3",
+    "EVENT NAME": "UNDERARM CRICKET",
+    "EVENT TIMES": "10:00 am",
+    "VENUE": "College Ground",
+    "IMAGE": "data/posters/underarmcricket.jpeg"
+  },
+  {
+    "EVENT DATE": "Day 3",
+    "EVENT NAME": "STRIKE 3",
+    "EVENT TIMES": "10:00 am",
+    "VENUE": "Basketball Court",
+    "IMAGE": "data/posters/strike3.jpeg"
+  },
+  {
+    "EVENT DATE": "Day 3",
+    "EVENT NAME": "RING TOSS",
+    "EVENT TIMES": "10:00 am",
+    "VENUE": "Near Lobby",
+    "IMAGE": "data/posters/ringtoss.jpeg"
+  },
+  {
+    "EVENT DATE": "Day 3",
+    "EVENT NAME": "SUMO WRESTLING",
+    "EVENT TIMES": "10:00 AM ",
+    "VENUE": "In Front of CCF Lab",
+    "IMAGE": "data/posters/sumo.jpeg"
+  },
+  {
+    "EVENT DATE": "Day 3",
+    "EVENT NAME": "RJ HUNT - PRELIMS",
+    "EVENT TIMES": "10:00 AM ",
+    "VENUE": "Main Seminar Hall",
+    "IMAGE": "data/posters/rj.jpeg"
+
+  },
+  {
+    "EVENT DATE": "Day 3",
+    "EVENT NAME": "BIZQUEST",
+    "EVENT TIMES": "10:00 AM ",
+    "VENUE": "MBA Block",
+    "IMAGE": "data/posters/bizq.jpeg"
+  },
+  {
+    "EVENT DATE": "Day 3",
+    "EVENT NAME": "ETHEREA - Modelling Workshop",
+    "EVENT TIMES": "10:30 AM",
+    "VENUE": "Auditorium",
+    "IMAGE": "data/posters/model.jpeg"
+  },
+  {
+    "EVENT DATE": "Day 3",
+    "EVENT NAME": "RJ Hunt - Final",
+    "EVENT TIMES": "01:00 AM",
+    "VENUE": "Main Stage"
+  }
+]

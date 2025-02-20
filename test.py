@@ -78,7 +78,7 @@ async def show_events(update: Update, context: ContextTypes.DEFAULT_TYPE):
     else:
         await query.message.reply_text("No events found for this day.")
 
-# Function to show event details with poster
+# Function to show event details
 async def show_event_details(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
@@ -97,26 +97,15 @@ async def show_event_details(update: Update, context: ContextTypes.DEFAULT_TYPE)
     
     if event:
         response = f"""
-    *EVENT DETAILS:*
-    
-    *Event Name:* {event["EVENT NAME"]}
-    *Venue:* {event["VENUE"]}
-    *Time:* {event["EVENT TIMES"]}
-
-    *Cordinators:* \n {event["C1"]} \n {event["C2"]}
-    ===================================
-
-    """
         
-        # Send image first if available
-        if "IMAGE" in event and event["IMAGE"]:
-            try:
-                await query.message.reply_photo(photo=event["IMAGE"], caption=response, parse_mode='Markdown')
-            except Exception as e:
-                print(f"Error sending image: {e}")
-                await query.message.reply_text(response, parse_mode='Markdown')
-        else:
-            await query.message.reply_text(response, parse_mode='Markdown')
+        *EVENT DETAILS:*
+        
+        *Event Name:* {event["EVENT NAME"]}
+        *Venue:* {event["VENUE"]}
+        *Time:* {event["EVENT TIMES"]}
+        
+        """
+        await query.message.reply_text(response, parse_mode='Markdown')
     else:
         await query.message.reply_text("Event details not available.")
 
