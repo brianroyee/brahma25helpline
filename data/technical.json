@@ -103,66 +103,99 @@
     "EVENT DATE": "Day 2",
     "EVENT NAME": "SQUID GAME",
     "EVENT TIMES": "10:00 AM",
-    "VENUE": "F19"
+    "VENUE": "F19",
+    "IMAGE": "data/posters/squidgame.jpeg",
+    "C1": "Alen Babu : https://wa.me/+916235573240",
+    "C2": "Adwaith : https://wa.me/+919744606770"
   },
   {
     "EVENT DATE": "Day 2",
     "EVENT NAME": "BULB IN THE CITY",
     "EVENT TIMES": "10:00 AM",
-    "VENUE": "EC Project Lab"
+    "VENUE": "EC Project Lab",
+    "IMAGE": "data/posters/bulb.jpeg",
+    "C1": "Alen Babu : https://wa.me/+916235573240",
+    "C2": "Aravind N : https://wa.me/+918848117963"
   },
   {
     "EVENT DATE": "Day 2",
     "EVENT NAME": "SMG Workshop",
     "EVENT TIMES": "10:00 AM",
-    "VENUE": "ME Seminar Hall"
+    "VENUE": "ME Seminar Hall",
+    "IMAGE": "data/posters/stallions.jpeg",
+    "C1": "Abhinav : https://wa.me/+91799412899",
+    "C2": "Jyothish : https://wa.me/+919072424453"
   },
   {
     "EVENT DATE": "Day 2",
     "EVENT NAME": "BMW ENGINE WORKSHOP",
     "EVENT TIMES": "10:00 AM",
-    "VENUE": "ME Thermal Lab"
+    "VENUE": "ME Thermal Lab",
+    "IMAGE": "data/posters/bmw.jpeg",
+    "C1": "Riyaz : https://wa.me/+917902834543",
+    "C2": "A M Rahul : https://wa.me/+918129506611"
   },
   {
     "EVENT DATE": "Day 2",
     "EVENT NAME": "3D SCAPE",
     "EVENT TIMES": "11:00 AM",
-    "VENUE": "CCF Lab 8"
+    "VENUE": "CCF Lab 8",
+    "IMAGE": "data/posters/3dscape.jpeg",
+    "C1": "Sarada G : https://wa.me/+918129135826",
+    "C2": "Vishnu Mohan : https://wa.me/+919747932515"
   },
   {
     "EVENT DATE": "Day 2",
     "EVENT NAME": "ROBO SOCCER",
     "EVENT TIMES": "12:00 PM",
-    "VENUE": "Main Ground"
+    "VENUE": "Main Ground",
+    "IMAGE": "data/posters/robosoccer.jpeg",
+    "C1": "Aditya : https://wa.me/+918714558004",
+    "C2": "Gautham : https://wa.me/+916282164898"
   },
   {
     "EVENT DATE": "Day 2",
     "EVENT NAME": "OPERATION DARKNOON",
     "EVENT TIMES": "02:00 PM",
-    "VENUE": "AI Lab"
+    "VENUE": "Deep Learning and ML Lab",
+    "IMAGE": "data/posters/operationdarknoon.jpeg",
+    "C1": "Brian : https://wa.me/+919995965621",
+    "C2": "Ashwin : https://wa.me/+919048822006"
   },
   {
     "EVENT DATE": "Day 2",
     "EVENT NAME": "ENGRAVEX",
     "EVENT TIMES": "02:00 PM",
-    "VENUE": "EC Project Lab"
+    "VENUE": "EC Project Lab",
+    "IMAGE": "data/posters/engravex.jpeg",
+    "C1": "Devangana : https://wa.me/+919778073227",
+    "C2": "Adithyan : https://wa.me/+919778027244"
   },
   {
     "EVENT DATE": "Day 2",
     "EVENT NAME": "TECH TRIVIA",
     "EVENT TIMES": "02:00 PM",
-    "VENUE": "ME Seminar Hall"
+    "VENUE": "ME Seminar Hall",
+    "IMAGE": "data/posters/techtrivia.jpeg",
+    "C1": "Sreejith : https://wa.me/+919744458457",
+    "C2": "Nandhana : https://wa.me/+917510391619"
   },
   {
     "EVENT DATE": "Day 3",
     "EVENT NAME": "UNITY MASTERY",
     "EVENT TIMES": "09:30 AM",
-    "VENUE": "CCF Lab 8 & 9"
+    "VENUE": "CCF Lab 8 & 9",
+    "IMAGE": "data/posters/unity.jpeg",
+    "C1": "Arunnand : https://wa.me/+918590709185",
+    "C2": "Tom Davis : https://wa.me/+919446610602"
   },
   {
     "EVENT DATE": "Day 3",
     "EVENT NAME": "MERN CRAFT",
     "EVENT TIMES": "09:30 AM",
-    "VENUE": "EC Simulation Lab"
+    "VENUE": "EC Simulation Lab",
+    "IMAGE": "data/posters/mern.jpeg",
+    "C1": "Jeffin Paul : https://wa.me/+919188163349",
+    "C2": "Alfiya M S : https://wa.me/+919744421579"
   }
 ]
