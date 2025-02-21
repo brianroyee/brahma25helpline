@@ -22,7 +22,7 @@ FILES = {
     "cultural": DATA_DIR / "cultural.json",
     "technical": DATA_DIR / "technical.json",
     "results": DATA_DIR / "results.json",
-    "stats": DATA_DIR / "bot_stats.json"  # New file for bot statistics
+    "stats": DATA_DIR / "bot_stats.json"  
 }
 
 # Ensure stats file exists
@@ -31,7 +31,7 @@ def initialize_stats_file():
     if not stats_file.exists():
         default_stats = {
             "total_users": 0,
-            "unique_users": set(),  # Will be converted to list for JSON storage
+            "unique_users": set(),  
             "start_time": time.time(),
             "downtime_periods": [],
             "commands_used": {
