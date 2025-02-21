@@ -75,10 +75,10 @@ def update_stats(user_id, command):
         print(f"Error updating stats: {e}")
 
 WELCOME_MESSAGE = """
-🎉 *Welcome to Brahma'25 Navigation Bot!* 🎉
+🎉 *Brahma'25 helpline Bot!* 🎉
 
-I'm here to help you navigate through Brahma'25 events and connect with the organizing team.
-How can I assist you today?
+I'm here to assist you with Brahma'25😊.
+How can I help you today?
 """
 
 COORDINATOR_MESSAGE = """
@@ -96,7 +96,8 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         [InlineKeyboardButton("🕗 Event Timeline", callback_data='event_timeline')],
         [InlineKeyboardButton("👥 Contact Team", callback_data='coordinators')],
         [InlineKeyboardButton("🏆 Event Results", callback_data='results')],
-        [InlineKeyboardButton("📊 Bot Status", callback_data='bot_status')]
+        [InlineKeyboardButton("📊 Bot Status", callback_data='bot_status')],
+        [InlineKeyboardButton("👨‍💻 Developer Info", callback_data='developers')]
 
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
@@ -412,7 +413,8 @@ async def back_to_start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         [InlineKeyboardButton("🕗 Event Timeline", callback_data='event_timeline')],
         [InlineKeyboardButton("👥 Contact Team", callback_data='coordinators')],
         [InlineKeyboardButton("🏆 Event Results", callback_data='results')],
-        [InlineKeyboardButton("📊 Bot Status", callback_data='bot_status')]
+        [InlineKeyboardButton("📊 Bot Status", callback_data='bot_status')],
+        [InlineKeyboardButton("👨‍💻 Developer Info", callback_data='developers')]
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
     await query.message.edit_text(WELCOME_MESSAGE, reply_markup=reply_markup, parse_mode='Markdown')
@@ -615,6 +617,53 @@ def record_downtime(is_down=True):
             json.dump(stats, f)
     except Exception as e:
         print(f"Error recording downtime: {e}")
+async def show_developers(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+    
+    dev_message = """
+
+*DEVELOPERS:*
+ `Brian Roy Mathew`
+
+*CONTRIBUTORS*
+ `Ashwin P Shine`
+ `Chandra Rajesh`
+ `Deepak M.R.`
+ `Anandhakrishnan`
+ `Ceeya Sarah Varghese`
+
+
+_Developed & Handled with ❤️ by HackClub ASIET_
+    """
+    
+    keyboard = [
+        [InlineKeyboardButton("Connect with Team", callback_data='connection')],
+        [InlineKeyboardButton("🔙 Back to Main Menu", callback_data='start')]]
+    reply_markup = InlineKeyboardMarkup(keyboard)
+    
+    await query.message.edit_text(dev_message, reply_markup=reply_markup, parse_mode='Markdown')
+
+async def show_connection(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+    
+    dev_message = """
+    Connect With Us:
+
+📍[BRIAN ROY MATHEW](https://www.linkedin.com/in/brianroymathew/)
+📍[ASHWIN P SHINE](https://www.linkedin.com/in/ashwin-p-shine/)
+📍[CHANDRA RAJESH](https://www.linkedin.com/in/chandra-rajesh/)
+📍[DEEPAK M.R.](https://www.linkedin.com/in/deepak-m-r-ab601a291/)
+📍[ANANTHAKRISHNAN](https://www.google.com)
+📍[CEEYA SARAH VARGHESE](https://www.linkedin.com/in/ceeya-sarah-varghese-38280632a/)
+    """
+
+    keyboard = [[InlineKeyboardButton("🔙 Back to Developer Info", callback_data='developers')]]
+    reply_markup = InlineKeyboardMarkup(keyboard)
+    
+    await query.message.edit_text(dev_message, reply_markup=reply_markup, parse_mode='Markdown')
+
 
 def main():
     """Initialize and run the bot."""
@@ -642,6 +691,9 @@ def main():
     app.add_handler(CallbackQueryHandler(show_bot_status, pattern='^bot_status$'))
     app.add_handler(CallbackQueryHandler(timeline_day_selection, pattern='^event_timeline$'))
     app.add_handler(CallbackQueryHandler(show_timeline, pattern='^timeline_Day [1-3]$'))
+    app.add_handler(CallbackQueryHandler(show_developers, pattern='^developers$'))
+    app.add_handler(CallbackQueryHandler(show_connection, pattern='^connection$'))
+
     
     print("✅ BOT IS READY TO ASSIST WITH BRAHMA'25 NAVIGATION")
     

@@ -29,6 +29,9 @@
     "EVENT TIMES": "12:00 PM",
     "VENUE": "Deep Learning and ML Lab",
     "IMAGE": "data/posters/gptales.jpeg",
+    "LINK": "http://makemypass.com/gptales",
+    "FEES": "₹100 per team",
+    "SR": "YET TO UPDATE",
     "C1": "<a href=\"https://wa.me/+918891007065\">Cliya (WhatsApp)</a>",
     "C2": "<a href=\"https://wa.me/+919744504004\">Afna (WhatsApp)</a>"
   },
@@ -38,6 +41,9 @@
     "EVENT TIMES": "09:00 AM",
     "VENUE": "CE Seminar Hall",
     "IMAGE": "data/posters/mediscope.jpeg",
+    "LINK": "http://makemypass.com/mediscope",
+    "FEES": "₹200 per team",
+    "SR": "YET TO UPDATE",
     "C1": "<a href=\"https://wa.me/+918606775061\">Antony (WhatsApp)</a>",
     "C2": "<a href=\"https://wa.me/+919446828807\">Ashif (WhatsApp)</a>"
   },
@@ -47,6 +53,9 @@
     "EVENT TIMES": "09:30 AM",
     "VENUE": "Main Ground",
     "IMAGE": "data/posters/roborace.jpeg",
+    "LINK": "http://makemypass.com/roborace",
+    "FEES": "₹300 per head",
+    "SR": "YET TO UPDATE",
     "C1": "<a href=\"https://wa.me/+919188428880\">Lakshmipriya (WhatsApp)</a>",
     "C2": "<a href=\"https://wa.me/+919072045546\">Adwaith (WhatsApp)</a>"
   },
@@ -56,6 +65,9 @@
     "EVENT TIMES": "09:30 AM",
     "VENUE": "CCF Lab 10 & 11",
     "IMAGE": "data/posters/codexcup.jpeg",
+    "LINK": "http://makemypass.com/codex-cup",
+    "FEES": "₹100 per team",
+    "SR": "YET TO UPDATE",
     "C1": "<a href=\"https://wa.me/+918089921762\">Ashuthosh (WhatsApp)</a>",
     "C2": "<a href=\"https://wa.me/+919656938630\">Nazmiya (WhatsApp)</a>"
   },
@@ -65,6 +77,9 @@
     "EVENT TIMES": "09:30 AM",
     "VENUE": "S2 CE Classroom",
     "IMAGE": "data/posters/archivia.jpeg",
+    "LINK": "http://makemypass.com/archivia",
+    "FEES": "₹200 per team",
+    "SR": "YET TO UPDATE",
     "C1": "<a href=\"https://wa.me/+917012297756\">Aparna (WhatsApp)</a>",
     "C2": "<a href=\"https://wa.me/+919746485915\">Anna (WhatsApp)</a>"
   },
@@ -74,6 +89,9 @@
     "EVENT TIMES": "10:00 AM",
     "VENUE": "EC Simulation Lab",
     "IMAGE": "data/posters/arduino.jpeg",
+    "LINK": "http://makemypass.com/arduino-workshop",
+    "FEES": "₹150 per head",
+    "SR": "YET TO UPDATE",
     "C1": "<a href=\"https://wa.me/+918590671357\">Greeshma (WhatsApp)</a>",
     "C2": "<a href=\"https://wa.me/+917907260694\">Dhiya (WhatsApp)</a>"
   },
@@ -83,8 +101,11 @@
     "EVENT TIMES": "10:00 AM",
     "VENUE": "EC Seminar Hall",
     "IMAGE": "data/posters/dataverse.jpeg",
-    "C1": "Nogil <a href=\"https://wa.me/+919061073470\">Binu (WhatsApp)</a>",
-    "C2": "Merin <a href=\"https://wa.me/+91919544220586\">Johnny (WhatsApp)</a>"
+    "LINK": "nil",
+    "FEES": "nil",
+    "SR": "✅",
+    "C1": "Nogil Binu<a href=\"https://wa.me/+919061073470\"> (WhatsApp)</a>",
+    "C2": "Merin Johnny<a href=\"https://wa.me/+91919544220586\"> (WhatsApp)</a>"
   },
   {
     "EVENT DATE": "Day 2",
@@ -92,6 +113,9 @@
     "EVENT TIMES": "10:00 AM",
     "VENUE": "PL Lab",
     "IMAGE": "data/posters/blockonomics.jpeg",
+    "LINK": "http://makemypass.com/blockonomics",
+    "FEES": "₹200 per head",
+    "SR": "YET TO UPDATE",
     "C1": "<a href=\"https://wa.me/+918593898913\">Ananya (WhatsApp)</a>",
     "C2": "<a href=\"https://wa.me/+919846060490\">Aleena (WhatsApp)</a>"
   },
@@ -101,6 +125,9 @@
     "EVENT TIMES": "10:00 AM",
     "VENUE": "CCF PARKING",
     "IMAGE": "data/posters/samagra.jpeg",
+    "LINK": "http://makemypass.com/samagra-iedc",
+    "FEES": "₹200 per team",
+    "SR": "YET TO UPDATE",
     "C1": "Ajin PD : [WhatsApp](https://wa.me/+917594088348",
     "C2": "<a href=\"https://wa.me/+918921783431\">Malavika (WhatsApp)</a>"
   },
@@ -110,6 +137,9 @@
     "EVENT TIMES": "10:00 AM",
     "VENUE": "F19",
     "IMAGE": "data/posters/squidgame.jpeg",
+    "LINK": "http://makemypass.com/squid-game",
+    "FEES": "₹100 per team",
+    "SR": "YET TO UPDATE",
     "C1": "Alen <a href=\"https://wa.me/+916235573240\">Babu (WhatsApp)</a>",
     "C2": "<a href=\"https://wa.me/+919744606770\">Adwaith (WhatsApp)</a>"
   },
@@ -128,6 +158,9 @@
     "EVENT TIMES": "10:00 AM",
     "VENUE": "ME Seminar Hall",
     "IMAGE": "data/posters/stallions.jpeg",
+    "LINK": "http://makemypass.com/stallions-workshop",
+    "FEES": "₹200 per head",
+    "SR": "YET TO UPDATE",
     "C1": "<a href=\"https://wa.me/+91799412899\">Abhinav (WhatsApp)</a>",
     "C2": "<a href=\"https://wa.me/+919072424453\">Jyothish (WhatsApp)</a>"
   },
@@ -137,6 +170,9 @@
     "EVENT TIMES": "10:00 AM",
     "VENUE": "ME Thermal Lab",
     "IMAGE": "data/posters/bmw.jpeg",
+    "LINK": "http://makemypass.com/bmw-engine",
+    "FEES": "₹200 per head",
+    "SR": "YET TO UPDATE",
     "C1": "<a href=\"https://wa.me/+917902834543\">Riyaz (WhatsApp)</a>",
     "C2": "A M <a href=\"https://wa.me/+918129506611\">Rahul (WhatsApp)</a>"
   },
@@ -146,8 +182,11 @@
     "EVENT TIMES": "11:00 AM",
     "VENUE": "CCF Lab 8",
     "IMAGE": "data/posters/3dscape.jpeg",
-    "C1": "Sarada <a href=\"https://wa.me/+918129135826\">G (WhatsApp)</a>",
-    "C2": "Vishnu <a href=\"https://wa.me/+919747932515\">Mohan (WhatsApp)</a>"
+    "LINK": "http://forms.gle/3daU2JE55SLSzphQ6",
+    "FEES": "\n <i>For ICI members </i> : ₹150 per head \n<i>For non ICI members</i> : ₹200 per head",
+    "SR": "❌",
+    "C1": "Sarada <a href=\"https://wa.me/+918129135826\"> (WhatsApp)</a>",
+    "C2": "Vishnu <a href=\"https://wa.me/+919747932515\"> (WhatsApp)</a>"
   },
   {
     "EVENT DATE": "Day 2",
@@ -155,6 +194,9 @@
     "EVENT TIMES": "12:00 PM",
     "VENUE": "Main Ground",
     "IMAGE": "data/posters/robosoccer.jpeg",
+    "LINK": "http://makemypass.com/robo-soccer",
+    "FEES": "₹500 per head",
+    "SR": "❌",
     "C1": "<a href=\"https://wa.me/+918714558004\">Aditya (WhatsApp)</a>",
     "C2": "<a href=\"https://wa.me/+916282164898\">Gautham (WhatsApp)</a>"
   },
@@ -164,8 +206,11 @@
     "EVENT TIMES": "02:00 PM",
     "VENUE": "Deep Learning and ML Lab",
     "IMAGE": "data/posters/operationdarknoon.jpeg",
-    "C1": "<a href=\"https://wa.me/+919995965621\">Brian (WhatsApp)</a>",
-    "C2": "<a href=\"https://wa.me/+919048822006\">Ashwin (WhatsApp)</a>"
+    "LINK": "http://makemypass.com/operation-darknoon",
+    "FEES": "₹150 per team",
+    "SR": "❌",
+    "C1": "Brian<a href=\"https://wa.me/+919995965621\"> (WhatsApp)</a>",
+    "C2": "Ashwin<a href=\"https://wa.me/+919048822006\"> (WhatsApp)</a>"
   },
   {
     "EVENT DATE": "Day 2",
@@ -173,8 +218,11 @@
     "EVENT TIMES": "02:00 PM",
     "VENUE": "EC Project Lab",
     "IMAGE": "data/posters/engravex.jpeg",
-    "C1": "<a href=\"https://wa.me/+919778073227\">Devangana (WhatsApp)</a>",
-    "C2": "<a href=\"https://wa.me/+919778027244\">Adithyan (WhatsApp)</a>"
+    "LINK": "http://makemypass.com/engravex",
+    "FEES": "₹100 per team",
+    "SR": "YET TO UPDATE",
+    "C1": "Devangana<a href=\"https://wa.me/+919778073227\"> (WhatsApp)</a>",
+    "C2": "Adithyan<a href=\"https://wa.me/+919778027244\"> (WhatsApp)</a>"
   },
   {
     "EVENT DATE": "Day 2",
@@ -182,6 +230,9 @@
     "EVENT TIMES": "02:00 PM",
     "VENUE": "ME Seminar Hall",
     "IMAGE": "data/posters/techtrivia.jpeg",
+    "LINK": "http://makemypass.com/tech-trivia",
+    "FEES": "₹50 per team",
+    "SR": "YET TO UPDATE",
     "C1": "<a href=\"https://wa.me/+919744458457\">Sreejith (WhatsApp)</a>",
     "C2": "<a href=\"https://wa.me/+917510391619\">Nandhana (WhatsApp)</a>"
   },
@@ -191,6 +242,9 @@
     "EVENT TIMES": "09:30 AM",
     "VENUE": "CCF Lab 8 & 9",
     "IMAGE": "data/posters/unity.jpeg",
+    "LINK": "https://forms.gle/Y91TKXBfwyMNgZfu9",
+    "FEES": "₹100 per head",
+    "SR": "YET TO UPDATE",
     "C1": "<a href=\"https://wa.me/+918590709185\">Arunnand (WhatsApp)</a>",
     "C2": "Tom <a href=\"https://wa.me/+919446610602\">Davis (WhatsApp)</a>"
   },
@@ -200,6 +254,9 @@
     "EVENT TIMES": "09:30 AM",
     "VENUE": "EC Simulation Lab",
     "IMAGE": "data/posters/mern.jpeg",
+    "LINK": "http://makemypass.com/ideathon",
+    "FEES": "₹100 per team",
+    "SR": "YET TO UPDATE",
     "C1": "Jeffin <a href=\"https://wa.me/+919188163349\">Paul (WhatsApp)</a>",
     "C2": "Alfiya M <a href=\"https://wa.me/+919744421579\">S (WhatsApp)</a>"
   }
