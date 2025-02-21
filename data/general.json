@@ -154,29 +154,29 @@
   },
   {
     "EVENT DATE": "Day 3",
-    "EVENT NAME": "RJ HUNT - PRELIMS",
-    "EVENT TIMES": "10:00 AM ",
-    "VENUE": "Main Seminar Hall",
-    "IMAGE": "data/posters/rj.jpeg"
+    "EVENT NAME": "RJ Hunt",
+    "EVENT TIMES": "01:00 AM",
+    "VENUE": "Main Stage",
+    "IMAGE": "data/posters/rj.jpeg",
+    "C1": "Lakshmi : https://wa.me/9746484962",
+    "C2": "Dilna : https://wa.me/7736891770"
   },
   {
     "EVENT DATE": "Day 3",
     "EVENT NAME": "BIZQUEST",
     "EVENT TIMES": "10:00 AM ",
     "VENUE": "MBA Block",
-    "IMAGE": "data/posters/bizq.jpeg"
+    "IMAGE": "data/posters/bizq.jpeg",
+    "C1": "Muhammad Asif : https://wa.me/7558895327",
+    "C2": "Prajeesha : https://wa.me/7592872642"
   },
   {
     "EVENT DATE": "Day 3",
     "EVENT NAME": "ETHEREA - Modelling Workshop",
     "EVENT TIMES": "10:30 AM",
     "VENUE": "Auditorium",
-    "IMAGE": "data/posters/model.jpeg"
-  },
-  {
-    "EVENT DATE": "Day 3",
-    "EVENT NAME": "RJ Hunt - Final",
-    "EVENT TIMES": "01:00 AM",
-    "VENUE": "Main Stage"
+    "IMAGE": "data/posters/model.jpeg",
+    "C1": "Sanchu : https://wa.me/7994354938",
+    "C2": "Ajishmi : https://wa.me/8590658416"
   }
 ]
