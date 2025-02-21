@@ -3,68 +3,101 @@
     "EVENT DATE": "Day 1",
     "EVENT NAME": "AUTO SHOWCASE",
     "EVENT TIMES": "09:00 AM",
-    "VENUE": "Main Ground"
+    "VENUE": "Main Ground",
+    "IMAGE": "data/posters/autoshowcase.jpeg",
+    "C1": "Sharon : https://wa.me/+917902819113",
+    "C2": "Adhil : https://wa.me/+919562371929s"
 
   },
   {
     "EVENT DATE": "Day 1",
     "EVENT NAME": "IDEATHON",
     "EVENT TIMES": "12:00 PM",
-    "VENUE": "EC Seminar Hall"
+    "VENUE": "EC Seminar Hall",
+    "IMAGE": "data/posters/idea.jpeg",
+    "C1": "Canice : https://wa.me/+917736553620",
+    "C2": "Sreejith : https://wa.me/+919633705821"
   },
   {
     "EVENT DATE": "Day 1",
     "EVENT NAME": "GPTALES",
     "EVENT TIMES": "12:00 PM",
-    "VENUE": "Deep Learning and ML Lab"
+    "VENUE": "Deep Learning and ML Lab",
+    "IMAGE": "data/posters/gptales.jpeg",
+    "C1": "Cliya : https://wa.me/+918891007065",
+    "C2": "Afna : https://wa.me/+919744504004"
   },
   {
     "EVENT DATE": "Day 2",
     "EVENT NAME": "MEDISCOPE",
     "EVENT TIMES": "09:00 AM",
-    "VENUE": "CE Seminar Hall"
+    "VENUE": "CE Seminar Hall",
+    "IMAGE": "data/posters/mediscope.jpeg",
+    "C1": "Antony : https://wa.me/+918606775061",
+    "C2": "Ashif : https://wa.me/+919446828807"
   },
   {
     "EVENT DATE": "Day 2",
     "EVENT NAME": "ROBO RACE",
     "EVENT TIMES": "09:30 AM",
-    "VENUE": "Main Ground"
+    "VENUE": "Main Ground",
+    "IMAGE": "data/posters/roborace.jpeg",
+    "C1": "Lakshmipriya : https://wa.me/+919188428880",
+    "C2": "Adwaith : https://wa.me/+919072045546"
   },
   {
     "EVENT DATE": "Day 2",
     "EVENT NAME": "CODEX CUP",
     "EVENT TIMES": "09:30 AM",
-    "VENUE": "CCF Lab 10 & 11"
+    "VENUE": "CCF Lab 10 & 11",
+    "IMAGE": "data/posters/codexcup.jpeg",
+    "C1": "Ashuthosh : https://wa.me/+918089921762",
+    "C2": "Nazmiya : https://wa.me/+919656938630"
   },
   {
     "EVENT DATE": "Day 2",
     "EVENT NAME": "ARCHIVIA",
     "EVENT TIMES": "09:30 AM",
-    "VENUE": "S2 CE Classroom"
+    "VENUE": "S2 CE Classroom",
+    "IMAGE": "data/posters/archivia.jpeg",
+    "C1": "Aparna : https://wa.me/+917012297756",
+    "C2": "Anna : https://wa.me/+919746485915"
   },
   {
     "EVENT DATE": "Day 2",
     "EVENT NAME": "ARDUINO WORKSHOP",
     "EVENT TIMES": "10:00 AM",
-    "VENUE": "EC Simulation Lab"
+    "VENUE": "EC Simulation Lab",
+    "IMAGE": "data/posters/arduino.jpeg",
+    "C1": "Greeshma : https://wa.me/+918590671357",
+    "C2": "Dhiya : https://wa.me/+917907260694"
   },
   {
     "EVENT DATE": "Day 2",
     "EVENT NAME": "DATAVERSE PROJECT EXPO",
     "EVENT TIMES": "10:00 AM",
-    "VENUE": "EC Seminar Hall"
+    "VENUE": "EC Seminar Hall",
+    "IMAGE": "data/posters/dataverse.jpeg",
+    "C1": "Nogil Binu : https://wa.me/+919061073470",
+    "C2": "Merin Johnny : https://wa.me/+91919544220586"
   },
   {
     "EVENT DATE": "Day 2",
     "EVENT NAME": "BLOCKONOMICS",
     "EVENT TIMES": "10:00 AM",
-    "VENUE": "PL Lab"
+    "VENUE": "PL Lab",
+    "IMAGE": "data/posters/blockonomics.jpeg",
+    "C1": "Ananya : https://wa.me/+918593898913",
+    "C2": "Aleena : https://wa.me/+919846060490"
   },
   {
     "EVENT DATE": "Day 2",
     "EVENT NAME": "SAMAGRA - A Project Expo",
     "EVENT TIMES": "10:00 AM",
-    "VENUE": "CCF PARKING"
+    "VENUE": "CCF PARKING",
+    "IMAGE": "data/posters/samagra.jpeg",
+    "C1": "Ajin PD : https://wa.me/+917594088348",
+    "C2": "Malavika : https://wa.me/+918921783431"
   },
   {
     "EVENT DATE": "Day 2",
