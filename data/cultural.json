@@ -4,6 +4,7 @@
     "EVENT NAME": "RAGAM",
     "EVENT TIMES": "01:00 PM",
     "VENUE": "Auditorium",
+    "IMAGE": "data/posters/ragam.jpg",
     "C1": "Isabel : https://wa.me/9544029701",
     "C2": "Athulya : https://wa.me/9400732104"
   },
@@ -12,6 +13,7 @@
     "EVENT NAME": "MIME - EKSTASIS",
     "EVENT TIMES": "01:00 PM",
     "VENUE": "Main Stage",
+    "IMAGE": "data/posters/ekstasis.jpg",
     "C1": "Sanjay P S : https://wa.me/+918086874890",
     "C2": "Swathi Bhatt : https://wa.me/+919746777616"
   },
@@ -20,6 +22,7 @@
     "EVENT NAME": "THEME SHOW - ZEPHYRA",
     "EVENT TIMES": "05:00 PM",
     "VENUE": "Main Stage",
+    "IMAGE": "data/posters/zephyra.jpg",
     "C1": "Neha : https://wa.me/+919615400600",
     "C2": "Akhil : https://wa.me/+919207063756"
   },
@@ -28,6 +31,7 @@
     "EVENT NAME": "Mudhra (Kuchuppudi)",
     "EVENT TIMES": "09:00 AM",
     "VENUE": "Main Stage",
+    "IMAGE": "data/posters/mudhra.jpg",
     "C1": "Akhila : https://wa.me/+917356293484",
     "C2": "Gayathri : https://wa.me/+917025849490"
   },
@@ -36,6 +40,7 @@
     "EVENT NAME": "VOICE OF BRAHMA - Prelims",
     "EVENT TIMES": "09:00 AM",
     "VENUE": "Seminar Hall",
+    "IMAGE": "data/posters/voiceofbrahma.jpg",
     "C1": "Gopika : https://wa.me/+918304805150",
     "C2": "Devika V K : https://wa.me/+916238458906"
   },
@@ -43,6 +48,7 @@
     "EVENT DATE": "Day 2",
     "EVENT NAME": "Mudhra (Bharathanatyam)",
     "EVENT TIMES": "11:00 AM",
+    "IMAGE": "data/posters/mudhra.jpg",
     "VENUE": "Auditorium",
     "C1": "Akhila : https://wa.me/+917356293484",
     "C2": "Gayathri : https://wa.me/+917025849490"
@@ -52,6 +58,7 @@
     "EVENT NAME": "STEP N SYCHRO - SYNCHRONIX",
     "EVENT TIMES": "11:00 AM",
     "VENUE": "Main Stage",
+    "IMAGE": "data/posters/synchronix.jpg",
     "C1": "Athulya : https://wa.me/+919778137459",
     "C2": "Anan Ali : https://wa.me/+919633366499"
   },
@@ -60,6 +67,7 @@
     "EVENT NAME": "BAND OF BRAHMA",
     "EVENT TIMES": "01:30 PM",
     "VENUE": "Main Stage",
+    "IMAGE": "data/posters/bandofbrahma.jpg",
     "C1": "Gouri : https://wa.me/+919400603534",
     "C2": "Sreehari : https://wa.me/+919847789988"
   },
@@ -67,6 +75,7 @@
     "EVENT DATE": "Day 2",
     "EVENT NAME": "Mudhra (Mohiniyattam)",
     "EVENT TIMES": "02:00 PM",
+    "IMAGE": "data/posters/mudhra.jpg",
     "VENUE": "Auditorium",
     "C1": "Akhila : https://wa.me/+917356293484",
     "C2": "Gayathri : https://wa.me/+917025849490"
@@ -75,6 +84,7 @@
     "EVENT DATE": "Day 2",
     "EVENT NAME": "Choreo Night - GROOVE GALA",
     "EVENT TIMES": "06:00 PM",
+    "IMAGE": "data/posters/groovegala.jpg",
     "VENUE": "Main Stage",
     "C1": "Goutham : https://wa.me/+919072058172",
     "C2": "Pradeesh : https://wa.me/+918590954904"
@@ -84,6 +94,7 @@
     "EVENT NAME": "DJ War - BEATX FUEGO",
     "EVENT TIMES": "09:30 AM",
     "VENUE": "Main Stage",
+    "IMAGE": "data/posters/beatxfuego.jpg",
     "C1": "Agnal : https://wa.me/+917561037991",
     "C2": "Rosmin Jose : https://wa.me/+918921929745"
   },
@@ -91,6 +102,7 @@
     "EVENT DATE": "Day 3",
     "EVENT NAME": "Doodling - FANTASIA GRAPHICA",
     "EVENT TIMES": "10:00 AM",
+    "IMAGE": "data/posters/fantasiagraphica.jpg",
     "VENUE": "F05",
     "C1": "Swetha : https://wa.me/+916238932944",
     "C2": "Abin Babu : https://wa.me/+918590507058"
@@ -99,6 +111,7 @@
     "EVENT DATE": "Day 3",
     "EVENT NAME": "Spot Dance - RAPID RUMBLE",
     "EVENT TIMES": "01:00 PM",
+    "IMAGE": "data/posters/rapidrumble.jpg",
     "VENUE": "Outdoor",
     "C1": "Sarang A : https://wa.me/+919567161288",
     "C2": "Parvathy V : https://wa.me/+919778204708"
