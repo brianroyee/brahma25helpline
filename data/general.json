@@ -13,113 +13,149 @@
     "EVENT NAME": "KNIVES OUT",
     "EVENT TIMES": "10:00 AM ",
     "VENUE": "S06",
+<<<<<<< HEAD
     "IMAGE": "data/posters/knivesout.jpeg"
     
+=======
+    "IMAGE": "data/posters/knivesout.jpeg",
+    "C1": "Nogil : https://wa.me/9061073470",
+    "C2": "Merin : https://wa.me/9544220586"
+>>>>>>> e8d6241a25d00416172a0b38e4d00de867e68a6e
   },
   {
     "EVENT DATE": "Day 2",
     "EVENT NAME": "GAME OF ROOMS",
     "EVENT TIMES": "10:00 AM",
     "VENUE": "S07",
-    "IMAGE": "data/posters/gor.jpeg"
+    "IMAGE": "data/posters/gor.jpeg",
+    "C1": "Balagopal : https://wa.me/8590680418",
+    "C2": "Ashish : https://wa.me/7994099585"
   },
   {
     "EVENT DATE": "Day 2",
     "EVENT NAME": "HANGING BAR",
     "EVENT TIMES": "10:00 AM",
     "VENUE": "In Front of Basketball Court",
-    "IMAGE": "data/posters/hb.jpeg"
+    "IMAGE": "data/posters/hb.jpeg",
+    "C1": "Afnaan : https://wa.me/9946123810",
+    "C2": "Midhun : https://wa.me/6282608636"
   },
   {
     "EVENT DATE": "Day 2",
     "EVENT NAME": "PAINT BALL",
     "EVENT TIMES": "10:00 AM ",
     "VENUE": "In Front of CNC Lab",
-    "IMAGE": "data/posters/paintball.jpeg"
+    "IMAGE": "data/posters/paintball.jpeg",
+    "C1": "Kailas : https://wa.me/9037563340",
+    "C2": "Jeevan : https://wa.me/7736646571"
   },
   {
     "EVENT DATE": "Day 2",
     "EVENT NAME": "RETRO CARROMS",
     "EVENT TIMES": "10:00 AM",
     "VENUE": "EC Mini Seminar Hall",
-    "IMAGE": "data/posters/carroms.jpeg"
+    "IMAGE": "data/posters/carroms.jpeg",
+    "C1": "Akshay : https://wa.me/8848364469",
+    "C2": "Afsal : https://wa.me/9037420589"
   },
   {
     "EVENT DATE": "Day 2",
     "EVENT NAME": "FIFA FEVER",
     "EVENT TIMES": "10:00 AM ",
     "VENUE": "Microcontroller Lab",
-    "IMAGE": "data/posters/fifafever.jpeg"
+    "IMAGE": "data/posters/fifafever.jpeg",
+    "C1": "Adithya : https://wa.me/9656244055",
+    "C2": "Aravind : https://wa.me/8086756043"
   },
   {
     "EVENT DATE": "Day 2",
     "EVENT NAME": "PRODUCT PIONEERS",
     "EVENT TIMES": "10:30 AM",
     "VENUE": "MBA Block",
-    "IMAGE": "data/posters/pp.jpeg"
+    "IMAGE": "data/posters/pp.jpeg",
+    "C1": "Navya Cijo : https://wa.me/8281230301",
+    "C2": "Devika N A : https://wa.me/9847270812"
   },
   {
     "EVENT DATE": "Day 2",
     "EVENT NAME": "MILTIA MADNESS",
     "EVENT TIMES": "11:00 AM",
     "VENUE": "S02",
-    "IMAGE": "data/posters/miltia.jpeg"
+    "IMAGE": "data/posters/miltia.jpeg",
+    "C1": "Rabeeh : https://wa.me/9072722603",
+    "C2": "Athul : https://wa.me/9188638542"
   },
   {
     "EVENT DATE": "Day 2",
     "EVENT NAME": "CLUE CRUSADE",
     "EVENT TIMES": "11:00 AM",
     "VENUE": "College Premises",
-    "IMAGE": "data/posters/clue.jpeg"
+    "IMAGE": "data/posters/clue.jpeg",
+    "C1": "Fathima : https://wa.me/9778206155",
+    "C2": "Ziyad : https://wa.me/9995881263"
   },
   {
     "EVENT DATE": "Day 2",
     "EVENT NAME": "GLOW BALL",
     "EVENT TIMES": "11:00 AM",
     "VENUE": "S06",
-    "IMAGE":"data/posters/glowball.jpeg"
+    "IMAGE": "data/posters/glowball.jpeg",
+    "C1": "Adithyan : https://wa.me/8589052075",
+    "C2": "Abhinand : https://wa.me/9446010600"
   },
   {
     "EVENT DATE": "Day 2",
     "EVENT NAME": "SOAPY SOCCER ",
     "EVENT TIMES": "11:00 AM",
     "VENUE": "College two wheeler parking",
-    "IMAGE": "data/posters/soapy.jpeg"
+    "IMAGE": "data/posters/soapy.jpeg",
+    "C1": "Abhimanyu : https://wa.me/9778743668",
+    "C2": "Althaf : https://wa.me/9961571611"
   },
   {
     "EVENT DATE": "Day 2",
     "EVENT NAME": "ASIET TALKIES",
     "EVENT TIMES": "01:00 pm",
     "VENUE": "Main Seminar Hall",
-    "IMAGE": "data/posters/talkies.jpeg"
+    "IMAGE": "data/posters/talkies.jpeg",
+    "C1": "Abhijith : https://wa.me/9496990487",
+    "C2": "Athul : https://wa.me/7736624675"
   },
   {
     "EVENT DATE": "Day 3",
     "EVENT NAME": "UNDERARM CRICKET",
     "EVENT TIMES": "10:00 am",
     "VENUE": "College Ground",
-    "IMAGE": "data/posters/underarmcricket.jpeg"
+    "IMAGE": "data/posters/underarmcricket.jpeg",
+    "C1": "Sanal : https://wa.me/7736920275",
+    "C2": "Richard : https://wa.me/9846401899"
   },
   {
     "EVENT DATE": "Day 3",
     "EVENT NAME": "STRIKE 3",
     "EVENT TIMES": "10:00 am",
     "VENUE": "Basketball Court",
-    "IMAGE": "data/posters/strike3.jpeg"
+    "IMAGE": "data/posters/strike3.jpeg",
+    "C1": "Abinand : https://wa.me/8301066741",
+    "C2": "Shiv Sajob : https://wa.me/9656381560"
   },
   {
     "EVENT DATE": "Day 3",
     "EVENT NAME": "RING TOSS",
     "EVENT TIMES": "10:00 am",
     "VENUE": "Near Lobby",
-    "IMAGE": "data/posters/ringtoss.jpeg"
+    "IMAGE": "data/posters/ringtoss.jpeg",
+    "C1": "Amruth : https://wa.me/9048934255",
+    "C2": "Arjun : https://wa.me/8590740227"
   },
   {
     "EVENT DATE": "Day 3",
     "EVENT NAME": "SUMO WRESTLING",
     "EVENT TIMES": "10:00 AM ",
     "VENUE": "In Front of CCF Lab",
-    "IMAGE": "data/posters/sumo.jpeg"
+    "IMAGE": "data/posters/sumo.jpeg",
+    "C1": "Resin : https://wa.me/7356534399",
+    "C2": "Balu : https://wa.me/6282758498"
   },
   {
     "EVENT DATE": "Day 3",
@@ -127,7 +163,6 @@
     "EVENT TIMES": "10:00 AM ",
     "VENUE": "Main Seminar Hall",
     "IMAGE": "data/posters/rj.jpeg"
-
   },
   {
     "EVENT DATE": "Day 3",

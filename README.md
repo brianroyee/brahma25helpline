@@ -1,45 +1,59 @@
-# brahma_bot
-Helpline bot of brahma
+# Brahma'25 Helpline Bot
 
-## Commands
+## Overview
+The **Brahma'25 Navigation Bot** is a Telegram bot designed to assist participants in navigating the Brahma'25 event seamlessly. It provides event schedules, team contact details, and specific event information in an interactive manner.
 
-- `/start` - Initiates the bot and displays the main menu
+## Features
+- 📅 **Event Schedule Navigation**: View day-wise event listings.
+- 🔧 **Categorized Event Listings**: Filter events based on type (General, Cultural, Technical).
+- 👥 **Contact Organizers**: Get details of the Brahma'25 organizing teams.
+- 🏥 **Emergency Information**: Quick access to medical and discipline teams.
+- 🖼️ **Event Details with Images**: View event descriptions along with relevant images.
 
-## Navigation Flow
+## Installation & Setup
 
-1. Main Menu
-   - EVENTS
-   - COORDINATORS
+### Prerequisites
+- Python 3.8+
+- Telegram Bot API Token
+- Required dependencies (install using `pip`):
+  ```bash
+  pip install python-telegram-bot
+  ```
+## Commands & Functionalities
 
-2. Day Selection
-   - Day 1 (Feb 28)
-   - Day 2 (Mar 01)
-   - Day 3 (Mar 02)
+### User Commands
+- `/start` - Initiates the bot with a welcome message and menu options.
 
-3. Category Selection
-   - Cultural Events
-   - General Events
-   - Technical Events
+### Callback Queries
+- `📅 Event Schedule` → Navigate through event days.
+- `👥 Contact Team` → View contact details of organizing teams.
+- `🗓️ Day 1 / Day 2 / Day 3` → Explore events scheduled for specific days.
+- `🎭 Cultural Events / 🌐 General Events / 🔧 Technical Events` → View categorized event listings.
+- `📌 [Event Name]` → Get event details including time, venue, and coordinators.
+- `🔙 Back` → Return to the previous menu.
 
-4. Event Details
-   - Event Name
-   - Venue
-   - Time
-   - Coordinator Information
+## Code Structure
+```
+/
+├── bot.py                 # Main bot script
+├── config.py              # Configuration file (add bot token here)
+├── data/
+│   ├── general.json       # JSON data for general events
+│   ├── cultural.json      # JSON data for cultural events
+│   ├── technical.json     # JSON data for technical events
+└── README.md              # Documentation
+```
 
-## Technical Requirements
+## Contributors
+- **BRIAN ROY MATHEW** - Project Lead & Developer
+- **CEEYA SARAH VARGHESE** - Contributor
+- **ASHWIN P SHINE** - Contributor
 
-- Python 3.x
-- python-telegram-bot library
-- JSON data files in the specified format
+_Made with <3 by HackClub ASIET_
 
-## Setup
+## License
+This project is licensed under the MIT License. Feel free to use, modify, and distribute as needed.
 
-1. Place your Telegram Bot Token in a `config.py` file
-2. Ensure JSON data files are present in the `./data/` directory
-3. Run `main.py` to start the bot
+## Contact
+For queries or suggestions, reach out via [GitHub Issues](https://github.com/brianroyee/brahma25helpline/issues) or Telegram.
 
-## Status when runnings
-
-✅ Bot Status: ONLINE  
-✅ Polling: Active

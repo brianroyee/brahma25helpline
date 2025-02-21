@@ -5,8 +5,15 @@ from telegram.ext import Application, CommandHandler, CallbackQueryHandler, Cont
 import sys
 from pathlib import Path
 
+from dotenv import load_dotenv
+import os 
+
+load_dotenv()
+
+TOKEN= os.getenv('TOKEN')
+
 sys.path.append("/home/teknikal/Desktop/HC EVENTS/telegram bot")
-from config import TOKEN
+#from config import TOKEN
 
 # File paths using Path for better cross-platform compatibility
 DATA_DIR = Path("./data")
