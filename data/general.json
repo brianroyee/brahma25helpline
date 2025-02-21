@@ -13,9 +13,14 @@
     "EVENT NAME": "KNIVES OUT",
     "EVENT TIMES": "10:00 AM ",
     "VENUE": "S06",
+<<<<<<< HEAD
+    "IMAGE": "data/posters/knivesout.jpeg"
+    
+=======
     "IMAGE": "data/posters/knivesout.jpeg",
     "C1": "Nogil : https://wa.me/9061073470",
     "C2": "Merin : https://wa.me/9544220586"
+>>>>>>> e8d6241a25d00416172a0b38e4d00de867e68a6e
   },
   {
     "EVENT DATE": "Day 2",
