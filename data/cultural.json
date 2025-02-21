@@ -5,8 +5,8 @@
     "EVENT TIMES": "01:00 PM",
     "VENUE": "Auditorium",
     "IMAGE": "data/posters/ragam.jpg",
-    "C1": "Isabel : https://wa.me/9544029701",
-    "C2": "Athulya : https://wa.me/9400732104"
+    "C1": "Isabel: <a href=\"https://wa.me/9544029701\">WhatsApp</a>",
+    "C2": "Athulya: <a href=\"https://wa.me/9400732104\">WhatsApp</a>"
   },
   {
     "EVENT DATE": "Day 1",
@@ -14,8 +14,8 @@
     "EVENT TIMES": "01:00 PM",
     "VENUE": "Main Stage",
     "IMAGE": "data/posters/ekstasis.jpg",
-    "C1": "Sanjay P S : https://wa.me/+918086874890",
-    "C2": "Swathi Bhatt : https://wa.me/+919746777616"
+    "C1": "Sanjay P S: <a href=\"https://wa.me/+918086874890\">WhatsApp</a>",
+    "C2": "Swathi Bhatt: <a href=\"https://wa.me/+919746777616\">WhatsApp</a>"
   },
   {
     "EVENT DATE": "Day 1",
@@ -23,8 +23,8 @@
     "EVENT TIMES": "05:00 PM",
     "VENUE": "Main Stage",
     "IMAGE": "data/posters/zephyra.jpg",
-    "C1": "Neha : https://wa.me/+919615400600",
-    "C2": "Akhil : https://wa.me/+919207063756"
+    "C1": "Neha: <a href=\"https://wa.me/+919615400600\">WhatsApp</a>",
+    "C2": "Akhil: <a href=\"https://wa.me/+919207063756\">WhatsApp</a>"
   },
   {
     "EVENT DATE": "Day 2",
@@ -32,8 +32,8 @@
     "EVENT TIMES": "09:00 AM",
     "VENUE": "Main Stage",
     "IMAGE": "data/posters/mudhra.jpg",
-    "C1": "Akhila : https://wa.me/+917356293484",
-    "C2": "Gayathri : https://wa.me/+917025849490"
+    "C1": "Akhila: <a href=\"https://wa.me/+917356293484\">WhatsApp</a>",
+    "C2": "Gayathri: <a href=\"https://wa.me/+917025849490\">WhatsApp</a>"
   },
   {
     "EVENT DATE": "Day 2",
@@ -41,8 +41,8 @@
     "EVENT TIMES": "09:00 AM",
     "VENUE": "Seminar Hall",
     "IMAGE": "data/posters/voiceofbrahma.jpg",
-    "C1": "Gopika : https://wa.me/+918304805150",
-    "C2": "Devika V K : https://wa.me/+916238458906"
+    "C1": "Gopika: <a href=\"https://wa.me/+918304805150\">WhatsApp</a>",
+    "C2": "Devika V K: <a href=\"https://wa.me/+916238458906\">WhatsApp</a>"
   },
   {
     "EVENT DATE": "Day 2",
@@ -50,8 +50,8 @@
     "EVENT TIMES": "11:00 AM",
     "IMAGE": "data/posters/mudhra.jpg",
     "VENUE": "Auditorium",
-    "C1": "Akhila : https://wa.me/+917356293484",
-    "C2": "Gayathri : https://wa.me/+917025849490"
+    "C1": "Akhila: <a href=\"https://wa.me/+917356293484\">WhatsApp</a>",
+    "C2": "Gayathri: <a href=\"https://wa.me/+917025849490\">WhatsApp</a>"
   },
   {
     "EVENT DATE": "Day 2",
@@ -59,8 +59,8 @@
     "EVENT TIMES": "11:00 AM",
     "VENUE": "Main Stage",
     "IMAGE": "data/posters/synchronix.jpg",
-    "C1": "Athulya : https://wa.me/+919778137459",
-    "C2": "Anan Ali : https://wa.me/+919633366499"
+    "C1": "Athulya: <a href=\"https://wa.me/+919778137459\">WhatsApp</a>",
+    "C2": "Anan Ali: <a href=\"https://wa.me/+919633366499\">WhatsApp</a>"
   },
   {
     "EVENT DATE": "Day 2",
@@ -68,8 +68,8 @@
     "EVENT TIMES": "01:30 PM",
     "VENUE": "Main Stage",
     "IMAGE": "data/posters/bandofbrahma.jpg",
-    "C1": "Gouri : https://wa.me/+919400603534",
-    "C2": "Sreehari : https://wa.me/+919847789988"
+    "C1": "Gouri: <a href=\"https://wa.me/+919400603534\">WhatsApp</a>",
+    "C2": "Sreehari: <a href=\"https://wa.me/+919847789988\">WhatsApp</a>"
   },
   {
     "EVENT DATE": "Day 2",
@@ -77,8 +77,8 @@
     "EVENT TIMES": "02:00 PM",
     "IMAGE": "data/posters/mudhra.jpg",
     "VENUE": "Auditorium",
-    "C1": "Akhila : https://wa.me/+917356293484",
-    "C2": "Gayathri : https://wa.me/+917025849490"
+    "C1": "Akhila: <a href=\"https://wa.me/+917356293484\">WhatsApp</a>",
+    "C2": "Gayathri: <a href=\"https://wa.me/+917025849490\">WhatsApp</a>"
   },
   {
     "EVENT DATE": "Day 2",
@@ -86,8 +86,8 @@
     "EVENT TIMES": "06:00 PM",
     "IMAGE": "data/posters/groovegala.jpg",
     "VENUE": "Main Stage",
-    "C1": "Goutham : https://wa.me/+919072058172",
-    "C2": "Pradeesh : https://wa.me/+918590954904"
+    "C1": "Goutham: <a href=\"https://wa.me/+919072058172\">WhatsApp</a>",
+    "C2": "Pradeesh: <a href=\"https://wa.me/+918590954904\">WhatsApp</a>"
   },
   {
     "EVENT DATE": "Day 3",
@@ -95,8 +95,8 @@
     "EVENT TIMES": "09:30 AM",
     "VENUE": "Main Stage",
     "IMAGE": "data/posters/beatxfuego.jpg",
-    "C1": "Agnal : https://wa.me/+917561037991",
-    "C2": "Rosmin Jose : https://wa.me/+918921929745"
+    "C1": "Agnal: <a href=\"https://wa.me/+917561037991\">WhatsApp</a>",
+    "C2": "Rosmin Jose: <a href=\"https://wa.me/+918921929745\">WhatsApp</a>"
   },
   {
     "EVENT DATE": "Day 3",
@@ -104,8 +104,8 @@
     "EVENT TIMES": "10:00 AM",
     "IMAGE": "data/posters/fantasiagraphica.jpg",
     "VENUE": "F05",
-    "C1": "Swetha : https://wa.me/+916238932944",
-    "C2": "Abin Babu : https://wa.me/+918590507058"
+    "C1": "Swetha: <a href=\"https://wa.me/+916238932944\">WhatsApp</a>",
+    "C2": "Abin Babu: <a href=\"https://wa.me/+918590507058\">WhatsApp</a>"
   },
   {
     "EVENT DATE": "Day 3",
@@ -113,7 +113,7 @@
     "EVENT TIMES": "01:00 PM",
     "IMAGE": "data/posters/rapidrumble.jpg",
     "VENUE": "Outdoor",
-    "C1": "Sarang A : https://wa.me/+919567161288",
-    "C2": "Parvathy V : https://wa.me/+919778204708"
+    "C1": "Sarang A: <a href=\"https://wa.me/+919567161288\">WhatsApp</a>",
+    "C2": "Parvathy V: <a href=\"https://wa.me/+919778204708\">WhatsApp</a>"
   }
 ]

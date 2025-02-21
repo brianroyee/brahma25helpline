@@ -1,5 +1,6 @@
 import json
 import time
+import telegram
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import Application, CommandHandler, CallbackQueryHandler, ContextTypes
 import sys
@@ -164,7 +165,7 @@ async def show_timeline(update: Update, context: ContextTypes.DEFAULT_TYPE):
     events_by_time = get_all_events_by_time(day)
     
     if events_by_time:
-        message = f"📅 *Timeline for {day}*\n\n"
+        message = f"📅 Timeline for {day}\n\n"
         
         for time_slot, events in events_by_time.items():
             message += f"*{time_slot}*\n"
@@ -207,7 +208,7 @@ async def events_menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
         [InlineKeyboardButton("🔙 Back to Days", callback_data='day_selection')]
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
-    await query.message.reply_text(
+    await query.message.edit_text(
         f"🎯 *What type of events interest you for {day}?*", 
         reply_markup=reply_markup,
         parse_mode='Markdown'
@@ -233,21 +234,62 @@ async def show_events(update: Update, context: ContextTypes.DEFAULT_TYPE):
     category, day = query.data.split('_', 1)
     events = get_events(category, day)
     
-    if events:
-        keyboard = [
-            [InlineKeyboardButton(f"📌 {event['EVENT NAME']}", 
-            callback_data=f'details_{category}_{event["EVENT NAME"]}')] 
-            for event in events
-        ]
-        keyboard.append([InlineKeyboardButton("🔙 Back to Categories", callback_data=f'Day {day[-1]}')])
-        reply_markup = InlineKeyboardMarkup(keyboard)
-        await query.message.reply_text(
-            f"🎪 *Available {category.capitalize()} Events - {day}:*",
-            reply_markup=reply_markup,
-            parse_mode='Markdown'
-        )
-    else:
-        await query.message.reply_text("😅 No events scheduled for this day yet!")
+    try:
+        if events:
+            keyboard = [
+                [InlineKeyboardButton(f"📌 {event['EVENT NAME']}", 
+                callback_data=f'details_{category}_{event["EVENT NAME"]}')] 
+                for event in events
+            ]
+            keyboard.append([InlineKeyboardButton("🔙 Back to Categories", callback_data=f'Day {day[-1]}')])
+            reply_markup = InlineKeyboardMarkup(keyboard)
+            
+            await query.message.edit_text(
+                f"🎪 *Available {category.capitalize()} Events - {day}:*",
+                reply_markup=reply_markup,
+                parse_mode='Markdown'
+            )
+        else:
+            await query.message.edit_text(
+                "😅 No events scheduled for this day yet!",
+                reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back", callback_data=f'Day {day[-1]}')]])
+            )
+    except telegram.error.BadRequest as e:
+        print(f"Error in show_events: {e}")
+        # If we can't edit, try sending a new message
+        if "There is no text in the message to edit" in str(e):
+            try:
+                # Delete old message if possible
+                try:
+                    await query.message.delete()
+                except:
+                    pass
+                
+                # Send as new message
+                if events:
+                    keyboard = [
+                        [InlineKeyboardButton(f"📌 {event['EVENT NAME']}", 
+                        callback_data=f'details_{category}_{event["EVENT NAME"]}')] 
+                        for event in events
+                    ]
+                    keyboard.append([InlineKeyboardButton("🔙 Back to Categories", callback_data=f'Day {day[-1]}')])
+                    reply_markup = InlineKeyboardMarkup(keyboard)
+                    
+                    await context.bot.send_message(
+                        chat_id=query.message.chat_id,
+                        text=f"🎪 *Available {category.capitalize()} Events - {day}:*",
+                        reply_markup=reply_markup,
+                        parse_mode='Markdown'
+                    )
+                else:
+                    await context.bot.send_message(
+                        chat_id=query.message.chat_id,
+                        text="😅 No events scheduled for this day yet!",
+                        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back", callback_data=f'Day {day[-1]}')]])
+                    )
+            except Exception as new_e:
+                print(f"Failed to send new message: {new_e}")    
+
 
 async def show_event_details(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
@@ -257,7 +299,18 @@ async def show_event_details(update: Update, context: ContextTypes.DEFAULT_TYPE)
     
     file_path = FILES.get(category)
     if not file_path or not file_path.exists():
-        await query.message.reply_text("❌ Event details not available.")
+        try:
+            await query.message.edit_text(
+                "❌ Event details not available.",
+                reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back", callback_data='day_selection')]])
+            )
+        except telegram.error.BadRequest:
+            # If edit fails, send new message
+            await context.bot.send_message(
+                chat_id=query.message.chat_id,
+                text="❌ Event details not available.",
+                reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back", callback_data='day_selection')]])
+            )
         return
     
     try:
@@ -267,36 +320,87 @@ async def show_event_details(update: Update, context: ContextTypes.DEFAULT_TYPE)
         event = next((e for e in events if e["EVENT NAME"] == event_name), None)
         
         if event:
+            event_day = event["EVENT DATE"]
+            
             response = f"""
-📋 *EVENT DETAILS*
+<b>EVENT DETAILS</b>
 
-🎯 *Event:* {event["EVENT NAME"]}
-📍 *Venue:* {event["VENUE"]}
-⏰ *Time:* {event["EVENT TIMES"]}
+<b>🎯 Event:</b> {event["EVENT NAME"]}
+<b>📍 Venue:</b> {event["VENUE"]}
+<b>⏰ Time:</b> {event["EVENT TIMES"]}
 
-👥 *Event Coordinators:* 
 
-• {event["C1"]}
-• {event["C2"]}
+<b>REGISTRATION DETAILS</b>
+
+🔗 <b>Link:</b> <a href="{event["LINK"]}">Register Here</a>  
+💸 <b>Fees:</b> {event["FEES"]}  
+🙋‍♂️ <b>Spot Registration:</b> {event["SR"]}  
+
+
+<b>👥 EVENT COORDINATORS</b>  
+{event["C1"]}  
+{event["C2"]}
+
             """
+            
+            # Create back button to return to events list
+            back_callback = f'{category}_{event_day}'
+            keyboard = [[InlineKeyboardButton("🔙 Back to Events", callback_data=back_callback)]]
+            reply_markup = InlineKeyboardMarkup(keyboard)
+            
+            # Always delete old message and send new one - most reliable approach
+            try:
+                await query.message.delete()
+            except Exception as del_e:
+                print(f"Could not delete message: {del_e}")
             
             if "IMAGE" in event and event["IMAGE"]:
                 try:
-                    await query.message.reply_photo(
+                    await context.bot.send_photo(
+                        chat_id=query.message.chat_id,
                         photo=event["IMAGE"],
                         caption=response,
-                        parse_mode='Markdown'
+                        reply_markup=reply_markup,
+                        parse_mode='HTML'
                     )
-                except Exception as e:
-                    print(f"Error sending image: {e}")
-                    await query.message.reply_text(response, parse_mode='Markdown')
+                except Exception as img_e:
+                    print(f"Error sending image: {img_e}")
+                    await context.bot.send_message(
+                        chat_id=query.message.chat_id,
+                        text=response,
+                        reply_markup=reply_markup,
+                        parse_mode='HTML'
+                    )
             else:
-                await query.message.reply_text(response, parse_mode='Markdown')
+                await context.bot.send_message(
+                    chat_id=query.message.chat_id,
+                    text=response,
+                    reply_markup=reply_markup,
+                    parse_mode='HTML'
+                )
         else:
-            await query.message.reply_text("❌ Event details not available.")
+            try:
+                await query.message.edit_text(
+                    "❌ Event not found.",
+                    reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back", callback_data='day_selection')]])
+                )
+            except telegram.error.BadRequest:
+                await context.bot.send_message(
+                    chat_id=query.message.chat_id,
+                    text="❌ Event not found.",
+                    reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back", callback_data='day_selection')]])
+                )
     except Exception as e:
-        print(f"Error processing event details: {e}")
-        await query.message.reply_text("❌ An error occurred while fetching event details.")
+        print(f"Error in show_event_details: {e}")
+        try:
+            await context.bot.send_message(
+                chat_id=query.message.chat_id,
+                text="❌ An error occurred while retrieving event details.",
+                reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Main Menu", callback_data='start')]])
+            )
+        except Exception as inner_e:
+            print(f"Failed to send error message: {inner_e}")
+
 
 async def back_to_start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Handle the back to main menu button."""
@@ -322,6 +426,7 @@ async def show_coordinators(update: Update, context: ContextTypes.DEFAULT_TYPE):
     update_stats(user_id, "contact_team")
     
     keyboard = [
+        [InlineKeyboardButton("👥 Student Coordination", callback_data='coord_student')],
         [InlineKeyboardButton("📝 Registration Team", callback_data='coord_registration')],
         [InlineKeyboardButton("🍽️ Refreshment Team", callback_data='coord_refreshment')],
         [InlineKeyboardButton("🏥 Medical Team", callback_data='coord_medical')],
@@ -329,7 +434,7 @@ async def show_coordinators(update: Update, context: ContextTypes.DEFAULT_TYPE):
         [InlineKeyboardButton("🔙 Back to Main Menu", callback_data='start')]
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
-    await query.message.reply_text(
+    await query.message.edit_text(
         COORDINATOR_MESSAGE,
         reply_markup=reply_markup,
         parse_mode='Markdown'
@@ -343,39 +448,57 @@ async def show_team_details(update: Update, context: ContextTypes.DEFAULT_TYPE):
     team_type = query.data.split('_')[1]
     
     team_messages = {
-        'registration': """
-📝 *Registration Team*
+        #student coordination team
+                'student': """
+*Student Coordination Team* 👥 
 
-*Head Coordinators:*
-• Name 1 - Contact
-• Name 2 - Contact
+_Coordinators:_
+ ```Nandhitha```  +917304396216
+```Vyshak```  +919745913185
+
+For student related queries, please contact the above team.
+        """,
+
+    #registeration team
+        'registration': """
+*Registration Team* 📝
+
+_Coordinators:_
+```Alen``` +919744134203
+```Devanandha``` +919037604721
 
 For registration related queries, please contact the above team.
         """,
-        'refreshment': """
-🍽️ *Refreshment Team*
 
-*Head Coordinators:*
-• Name 1 - Contact
-• Name 2 - Contact
+    #refreshments team
+        'refreshment': """
+*Refreshment Team* 🍽️ 
+
+_Coordinators:_
+```Harikrishnan``` +919446990681
+```Vivek``` +919747737337
 
 For refreshment related queries, please contact the above team.
         """,
+
+    #medical team    
         'medical': """
 🏥 *Medical Team*
 
-*Emergency Contacts:*
-• Name 1 - Contact
-• Name 2 - Contact
+_Emergency Contacts:_ 
+```Aleena``` +9181039026386
+```Devika``` +918590282983
 
-Medical assistance is available 24/7 during the event.
+For any medical assistance/emergency during the event, please contact the above team.
         """,
-        'discipline': """
-👮 *Discipline Team*
 
-*Head Coordinators:*
-• Name 1 - Contact
-• Name 2 - Contact
+        #discipline team
+        'discipline': """
+*Discipline Team*👮 
+
+_Coordinators:_
+```Dhrupath``` +919400941004
+```Yadhu``` +918138835700
 
 For any discipline related concerns, please contact the above team.
         """
@@ -384,7 +507,7 @@ For any discipline related concerns, please contact the above team.
     keyboard = [[InlineKeyboardButton("🔙 Back to Teams", callback_data='coordinators')]]
     reply_markup = InlineKeyboardMarkup(keyboard)
     
-    await query.message.reply_text(
+    await query.message.edit_text(
         team_messages.get(team_type, "Team details not available"),
         reply_markup=reply_markup,
         parse_mode='Markdown'
@@ -459,14 +582,14 @@ async def show_bot_status(update: Update, context: ContextTypes.DEFAULT_TYPE):
         keyboard = [[InlineKeyboardButton("🔙 Back to Main Menu", callback_data='start')]]
         reply_markup = InlineKeyboardMarkup(keyboard)
         
-        await query.message.reply_text(
+        await query.message.edit_text(
             status_message,
             reply_markup=reply_markup,
             parse_mode='Markdown'
         )
     except Exception as e:
         print(f"Error displaying bot status: {e}")
-        await query.message.reply_text(
+        await query.message.edit_text(
             "❌ Error retrieving bot statistics. Please try again later.",
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back", callback_data='start')]]),
             parse_mode='Markdown'

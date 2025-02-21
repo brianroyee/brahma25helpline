@@ -5,9 +5,11 @@
     "EVENT TIMES": "09:00 AM",
     "VENUE": "Main Ground",
     "IMAGE": "data/posters/autoshowcase.jpeg",
-    "C1": "Sharon : https://wa.me/+917902819113",
-    "C2": "Adhil : https://wa.me/+919562371929s"
-
+    "LINK": "nil",
+    "FEES": "nil",
+    "SR": "✅",
+    "C1": "Sharon: <a href=\"https://wa.me/+917902819113\"> (WhatsApp)</a>",
+    "C2": "Adhil: <a href=\"https://wa.me/+919562371929\"> (WhatsApp)</a>"
   },
   {
     "EVENT DATE": "Day 1",
@@ -15,8 +17,11 @@
     "EVENT TIMES": "12:00 PM",
     "VENUE": "EC Seminar Hall",
     "IMAGE": "data/posters/idea.jpeg",
-    "C1": "Canice : https://wa.me/+917736553620",
-    "C2": "Sreejith : https://wa.me/+919633705821"
+    "LINK": "http://makemypass.com/ideathon",
+    "FEES": "₹100 per team",
+    "SR": "YET TO UPDATE",
+    "C1": "<a href=\"https://wa.me/+917736553620\">Canice (WhatsApp)</a>",
+    "C2": "<a href=\"https://wa.me/+919633705821\">Sreejith (WhatsApp)</a>"
   },
   {
     "EVENT DATE": "Day 1",
@@ -24,8 +29,8 @@
     "EVENT TIMES": "12:00 PM",
     "VENUE": "Deep Learning and ML Lab",
     "IMAGE": "data/posters/gptales.jpeg",
-    "C1": "Cliya : https://wa.me/+918891007065",
-    "C2": "Afna : https://wa.me/+919744504004"
+    "C1": "<a href=\"https://wa.me/+918891007065\">Cliya (WhatsApp)</a>",
+    "C2": "<a href=\"https://wa.me/+919744504004\">Afna (WhatsApp)</a>"
   },
   {
     "EVENT DATE": "Day 2",
@@ -33,8 +38,8 @@
     "EVENT TIMES": "09:00 AM",
     "VENUE": "CE Seminar Hall",
     "IMAGE": "data/posters/mediscope.jpeg",
-    "C1": "Antony : https://wa.me/+918606775061",
-    "C2": "Ashif : https://wa.me/+919446828807"
+    "C1": "<a href=\"https://wa.me/+918606775061\">Antony (WhatsApp)</a>",
+    "C2": "<a href=\"https://wa.me/+919446828807\">Ashif (WhatsApp)</a>"
   },
   {
     "EVENT DATE": "Day 2",
@@ -42,8 +47,8 @@
     "EVENT TIMES": "09:30 AM",
     "VENUE": "Main Ground",
     "IMAGE": "data/posters/roborace.jpeg",
-    "C1": "Lakshmipriya : https://wa.me/+919188428880",
-    "C2": "Adwaith : https://wa.me/+919072045546"
+    "C1": "<a href=\"https://wa.me/+919188428880\">Lakshmipriya (WhatsApp)</a>",
+    "C2": "<a href=\"https://wa.me/+919072045546\">Adwaith (WhatsApp)</a>"
   },
   {
     "EVENT DATE": "Day 2",
@@ -51,8 +56,8 @@
     "EVENT TIMES": "09:30 AM",
     "VENUE": "CCF Lab 10 & 11",
     "IMAGE": "data/posters/codexcup.jpeg",
-    "C1": "Ashuthosh : https://wa.me/+918089921762",
-    "C2": "Nazmiya : https://wa.me/+919656938630"
+    "C1": "<a href=\"https://wa.me/+918089921762\">Ashuthosh (WhatsApp)</a>",
+    "C2": "<a href=\"https://wa.me/+919656938630\">Nazmiya (WhatsApp)</a>"
   },
   {
     "EVENT DATE": "Day 2",
@@ -60,8 +65,8 @@
     "EVENT TIMES": "09:30 AM",
     "VENUE": "S2 CE Classroom",
     "IMAGE": "data/posters/archivia.jpeg",
-    "C1": "Aparna : https://wa.me/+917012297756",
-    "C2": "Anna : https://wa.me/+919746485915"
+    "C1": "<a href=\"https://wa.me/+917012297756\">Aparna (WhatsApp)</a>",
+    "C2": "<a href=\"https://wa.me/+919746485915\">Anna (WhatsApp)</a>"
   },
   {
     "EVENT DATE": "Day 2",
@@ -69,8 +74,8 @@
     "EVENT TIMES": "10:00 AM",
     "VENUE": "EC Simulation Lab",
     "IMAGE": "data/posters/arduino.jpeg",
-    "C1": "Greeshma : https://wa.me/+918590671357",
-    "C2": "Dhiya : https://wa.me/+917907260694"
+    "C1": "<a href=\"https://wa.me/+918590671357\">Greeshma (WhatsApp)</a>",
+    "C2": "<a href=\"https://wa.me/+917907260694\">Dhiya (WhatsApp)</a>"
   },
   {
     "EVENT DATE": "Day 2",
@@ -78,8 +83,8 @@
     "EVENT TIMES": "10:00 AM",
     "VENUE": "EC Seminar Hall",
     "IMAGE": "data/posters/dataverse.jpeg",
-    "C1": "Nogil Binu : https://wa.me/+919061073470",
-    "C2": "Merin Johnny : https://wa.me/+91919544220586"
+    "C1": "Nogil <a href=\"https://wa.me/+919061073470\">Binu (WhatsApp)</a>",
+    "C2": "Merin <a href=\"https://wa.me/+91919544220586\">Johnny (WhatsApp)</a>"
   },
   {
     "EVENT DATE": "Day 2",
@@ -87,8 +92,8 @@
     "EVENT TIMES": "10:00 AM",
     "VENUE": "PL Lab",
     "IMAGE": "data/posters/blockonomics.jpeg",
-    "C1": "Ananya : https://wa.me/+918593898913",
-    "C2": "Aleena : https://wa.me/+919846060490"
+    "C1": "<a href=\"https://wa.me/+918593898913\">Ananya (WhatsApp)</a>",
+    "C2": "<a href=\"https://wa.me/+919846060490\">Aleena (WhatsApp)</a>"
   },
   {
     "EVENT DATE": "Day 2",
@@ -96,8 +101,8 @@
     "EVENT TIMES": "10:00 AM",
     "VENUE": "CCF PARKING",
     "IMAGE": "data/posters/samagra.jpeg",
-    "C1": "Ajin PD : https://wa.me/+917594088348",
-    "C2": "Malavika : https://wa.me/+918921783431"
+    "C1": "Ajin PD : [WhatsApp](https://wa.me/+917594088348",
+    "C2": "<a href=\"https://wa.me/+918921783431\">Malavika (WhatsApp)</a>"
   },
   {
     "EVENT DATE": "Day 2",
@@ -105,8 +110,8 @@
     "EVENT TIMES": "10:00 AM",
     "VENUE": "F19",
     "IMAGE": "data/posters/squidgame.jpeg",
-    "C1": "Alen Babu : https://wa.me/+916235573240",
-    "C2": "Adwaith : https://wa.me/+919744606770"
+    "C1": "Alen <a href=\"https://wa.me/+916235573240\">Babu (WhatsApp)</a>",
+    "C2": "<a href=\"https://wa.me/+919744606770\">Adwaith (WhatsApp)</a>"
   },
   {
     "EVENT DATE": "Day 2",
@@ -114,8 +119,8 @@
     "EVENT TIMES": "10:00 AM",
     "VENUE": "EC Project Lab",
     "IMAGE": "data/posters/bulb.jpeg",
-    "C1": "Alen Babu : https://wa.me/+916235573240",
-    "C2": "Aravind N : https://wa.me/+918848117963"
+    "C1": "Alen <a href=\"https://wa.me/+916235573240\">Babu (WhatsApp)</a>",
+    "C2": "Aravind <a href=\"https://wa.me/+918848117963\">N (WhatsApp)</a>"
   },
   {
     "EVENT DATE": "Day 2",
@@ -123,8 +128,8 @@
     "EVENT TIMES": "10:00 AM",
     "VENUE": "ME Seminar Hall",
     "IMAGE": "data/posters/stallions.jpeg",
-    "C1": "Abhinav : https://wa.me/+91799412899",
-    "C2": "Jyothish : https://wa.me/+919072424453"
+    "C1": "<a href=\"https://wa.me/+91799412899\">Abhinav (WhatsApp)</a>",
+    "C2": "<a href=\"https://wa.me/+919072424453\">Jyothish (WhatsApp)</a>"
   },
   {
     "EVENT DATE": "Day 2",
@@ -132,8 +137,8 @@
     "EVENT TIMES": "10:00 AM",
     "VENUE": "ME Thermal Lab",
     "IMAGE": "data/posters/bmw.jpeg",
-    "C1": "Riyaz : https://wa.me/+917902834543",
-    "C2": "A M Rahul : https://wa.me/+918129506611"
+    "C1": "<a href=\"https://wa.me/+917902834543\">Riyaz (WhatsApp)</a>",
+    "C2": "A M <a href=\"https://wa.me/+918129506611\">Rahul (WhatsApp)</a>"
   },
   {
     "EVENT DATE": "Day 2",
@@ -141,8 +146,8 @@
     "EVENT TIMES": "11:00 AM",
     "VENUE": "CCF Lab 8",
     "IMAGE": "data/posters/3dscape.jpeg",
-    "C1": "Sarada G : https://wa.me/+918129135826",
-    "C2": "Vishnu Mohan : https://wa.me/+919747932515"
+    "C1": "Sarada <a href=\"https://wa.me/+918129135826\">G (WhatsApp)</a>",
+    "C2": "Vishnu <a href=\"https://wa.me/+919747932515\">Mohan (WhatsApp)</a>"
   },
   {
     "EVENT DATE": "Day 2",
@@ -150,8 +155,8 @@
     "EVENT TIMES": "12:00 PM",
     "VENUE": "Main Ground",
     "IMAGE": "data/posters/robosoccer.jpeg",
-    "C1": "Aditya : https://wa.me/+918714558004",
-    "C2": "Gautham : https://wa.me/+916282164898"
+    "C1": "<a href=\"https://wa.me/+918714558004\">Aditya (WhatsApp)</a>",
+    "C2": "<a href=\"https://wa.me/+916282164898\">Gautham (WhatsApp)</a>"
   },
   {
     "EVENT DATE": "Day 2",
@@ -159,8 +164,8 @@
     "EVENT TIMES": "02:00 PM",
     "VENUE": "Deep Learning and ML Lab",
     "IMAGE": "data/posters/operationdarknoon.jpeg",
-    "C1": "Brian : https://wa.me/+919995965621",
-    "C2": "Ashwin : https://wa.me/+919048822006"
+    "C1": "<a href=\"https://wa.me/+919995965621\">Brian (WhatsApp)</a>",
+    "C2": "<a href=\"https://wa.me/+919048822006\">Ashwin (WhatsApp)</a>"
   },
   {
     "EVENT DATE": "Day 2",
@@ -168,8 +173,8 @@
     "EVENT TIMES": "02:00 PM",
     "VENUE": "EC Project Lab",
     "IMAGE": "data/posters/engravex.jpeg",
-    "C1": "Devangana : https://wa.me/+919778073227",
-    "C2": "Adithyan : https://wa.me/+919778027244"
+    "C1": "<a href=\"https://wa.me/+919778073227\">Devangana (WhatsApp)</a>",
+    "C2": "<a href=\"https://wa.me/+919778027244\">Adithyan (WhatsApp)</a>"
   },
   {
     "EVENT DATE": "Day 2",
@@ -177,8 +182,8 @@
     "EVENT TIMES": "02:00 PM",
     "VENUE": "ME Seminar Hall",
     "IMAGE": "data/posters/techtrivia.jpeg",
-    "C1": "Sreejith : https://wa.me/+919744458457",
-    "C2": "Nandhana : https://wa.me/+917510391619"
+    "C1": "<a href=\"https://wa.me/+919744458457\">Sreejith (WhatsApp)</a>",
+    "C2": "<a href=\"https://wa.me/+917510391619\">Nandhana (WhatsApp)</a>"
   },
   {
     "EVENT DATE": "Day 3",
@@ -186,8 +191,8 @@
     "EVENT TIMES": "09:30 AM",
     "VENUE": "CCF Lab 8 & 9",
     "IMAGE": "data/posters/unity.jpeg",
-    "C1": "Arunnand : https://wa.me/+918590709185",
-    "C2": "Tom Davis : https://wa.me/+919446610602"
+    "C1": "<a href=\"https://wa.me/+918590709185\">Arunnand (WhatsApp)</a>",
+    "C2": "Tom <a href=\"https://wa.me/+919446610602\">Davis (WhatsApp)</a>"
   },
   {
     "EVENT DATE": "Day 3",
@@ -195,7 +200,7 @@
     "EVENT TIMES": "09:30 AM",
     "VENUE": "EC Simulation Lab",
     "IMAGE": "data/posters/mern.jpeg",
-    "C1": "Jeffin Paul : https://wa.me/+919188163349",
-    "C2": "Alfiya M S : https://wa.me/+919744421579"
+    "C1": "Jeffin <a href=\"https://wa.me/+919188163349\">Paul (WhatsApp)</a>",
+    "C2": "Alfiya M <a href=\"https://wa.me/+919744421579\">S (WhatsApp)</a>"
   }
 ]
