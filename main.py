@@ -461,7 +461,7 @@ async def show_team_details(update: Update, context: ContextTypes.DEFAULT_TYPE):
 *Student Coordination Team* 👥 
 
 _Coordinators:_
- ```Nandhitha```  +917304396216
+ ```Nanditha```  +917304396216
 ```Vyshak```  +919745913185
 
 For student related queries, please contact the above team.

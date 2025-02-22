@@ -3,7 +3,10 @@
     "EVENT DATE": "Day 1",
     "EVENT NAME": "RAGAM",
     "EVENT TIMES": "01:00 PM",
-    "VENUE": "Auditorium",
+    "VENUE": "Auditorium",    
+    "LINK": "https://makemypass.com/ragam-brahma",
+    "FEES": "₹200 PER HEAD",
+    "SR": "❌",
     "IMAGE": "data/posters/ragam.jpg",
     "C1": "Isabel: <a href=\"https://wa.me/9544029701\">WhatsApp</a>",
     "C2": "Athulya: <a href=\"https://wa.me/9400732104\">WhatsApp</a>"
@@ -13,6 +16,9 @@
     "EVENT NAME": "MIME - EKSTASIS",
     "EVENT TIMES": "01:00 PM",
     "VENUE": "Main Stage",
+    "LINK": "https://makemypass.com/ekstasis-brahma",
+    "FEES": "₹200 PER HEAD",
+    "SR": "❌",
     "IMAGE": "data/posters/ekstasis.jpg",
     "C1": "Sanjay P S: <a href=\"https://wa.me/+918086874890\">WhatsApp</a>",
     "C2": "Swathi Bhatt: <a href=\"https://wa.me/+919746777616\">WhatsApp</a>"
@@ -22,6 +28,9 @@
     "EVENT NAME": "THEME SHOW - ZEPHYRA",
     "EVENT TIMES": "05:00 PM",
     "VENUE": "Main Stage",
+    "LINK": "https://makemypass.com/zephyra",
+    "FEES": "₹200 PER HEAD",
+    "SR": "❌",
     "IMAGE": "data/posters/zephyra.jpg",
     "C1": "Neha: <a href=\"https://wa.me/+919615400600\">WhatsApp</a>",
     "C2": "Akhil: <a href=\"https://wa.me/+919207063756\">WhatsApp</a>"
@@ -31,6 +40,9 @@
     "EVENT NAME": "Mudhra (Kuchuppudi)",
     "EVENT TIMES": "09:00 AM",
     "VENUE": "Main Stage",
+    "LINK": "https://makemypass.com/mudhra",
+    "FEES": "₹200 PER HEAD",
+    "SR": "❌",
     "IMAGE": "data/posters/mudhra.jpg",
     "C1": "Akhila: <a href=\"https://wa.me/+917356293484\">WhatsApp</a>",
     "C2": "Gayathri: <a href=\"https://wa.me/+917025849490\">WhatsApp</a>"
@@ -40,6 +52,9 @@
     "EVENT NAME": "VOICE OF BRAHMA - Prelims",
     "EVENT TIMES": "09:00 AM",
     "VENUE": "Seminar Hall",
+    "LINK": "https://makemypass.com/voice-of-brahma",
+    "FEES": "₹200 PER HEAD",
+    "SR": "❌",
     "IMAGE": "data/posters/voiceofbrahma.jpg",
     "C1": "Gopika: <a href=\"https://wa.me/+918304805150\">WhatsApp</a>",
     "C2": "Devika V K: <a href=\"https://wa.me/+916238458906\">WhatsApp</a>"
@@ -49,6 +64,9 @@
     "EVENT NAME": "Mudhra (Bharathanatyam)",
     "EVENT TIMES": "11:00 AM",
     "IMAGE": "data/posters/mudhra.jpg",
+    "LINK": "https://makemypass.com/mudhra",
+    "FEES": "₹200 PER HEAD",
+    "SR": "❌",
     "VENUE": "Auditorium",
     "C1": "Akhila: <a href=\"https://wa.me/+917356293484\">WhatsApp</a>",
     "C2": "Gayathri: <a href=\"https://wa.me/+917025849490\">WhatsApp</a>"
@@ -58,6 +76,9 @@
     "EVENT NAME": "STEP N SYCHRO - SYNCHRONIX",
     "EVENT TIMES": "11:00 AM",
     "VENUE": "Main Stage",
+    "LINK": "https://makemypass.com/synchronix",
+    "FEES": "₹200 PER HEAD",
+    "SR": "❌",
     "IMAGE": "data/posters/synchronix.jpg",
     "C1": "Athulya: <a href=\"https://wa.me/+919778137459\">WhatsApp</a>",
     "C2": "Anan Ali: <a href=\"https://wa.me/+919633366499\">WhatsApp</a>"
@@ -67,6 +88,9 @@
     "EVENT NAME": "BAND OF BRAHMA",
     "EVENT TIMES": "01:30 PM",
     "VENUE": "Main Stage",
+    "LINK": "https://makemypass.com/band-of-brahma",
+    "FEES": "₹200 PER HEAD",
+    "SR": "❌",
     "IMAGE": "data/posters/bandofbrahma.jpg",
     "C1": "Gouri: <a href=\"https://wa.me/+919400603534\">WhatsApp</a>",
     "C2": "Sreehari: <a href=\"https://wa.me/+919847789988\">WhatsApp</a>"
@@ -77,6 +101,9 @@
     "EVENT TIMES": "02:00 PM",
     "IMAGE": "data/posters/mudhra.jpg",
     "VENUE": "Auditorium",
+    "LINK": "https://makemypass.com/mudhra",
+    "FEES": "₹200 PER HEAD",
+    "SR": "❌",
     "C1": "Akhila: <a href=\"https://wa.me/+917356293484\">WhatsApp</a>",
     "C2": "Gayathri: <a href=\"https://wa.me/+917025849490\">WhatsApp</a>"
   },
@@ -86,6 +113,9 @@
     "EVENT TIMES": "06:00 PM",
     "IMAGE": "data/posters/groovegala.jpg",
     "VENUE": "Main Stage",
+    "LINK": "https://makemypass.com/groove-gala",
+    "FEES": "₹200 PER HEAD",
+    "SR": "❌",
     "C1": "Goutham: <a href=\"https://wa.me/+919072058172\">WhatsApp</a>",
     "C2": "Pradeesh: <a href=\"https://wa.me/+918590954904\">WhatsApp</a>"
   },
@@ -94,6 +124,9 @@
     "EVENT NAME": "DJ War - BEATX FUEGO",
     "EVENT TIMES": "09:30 AM",
     "VENUE": "Main Stage",
+    "LINK": "https://makemypass.com/beatx-fuego",
+    "FEES": "₹500 PER HEAD",
+    "SR": "❌",
     "IMAGE": "data/posters/beatxfuego.jpg",
     "C1": "Agnal: <a href=\"https://wa.me/+917561037991\">WhatsApp</a>",
     "C2": "Rosmin Jose: <a href=\"https://wa.me/+918921929745\">WhatsApp</a>"
@@ -104,6 +137,9 @@
     "EVENT TIMES": "10:00 AM",
     "IMAGE": "data/posters/fantasiagraphica.jpg",
     "VENUE": "F05",
+    "LINK": "https://makemypass.com/fantasia-graphica",
+    "FEES": "₹100 PER HEAD",
+    "SR": "❌",
     "C1": "Swetha: <a href=\"https://wa.me/+916238932944\">WhatsApp</a>",
     "C2": "Abin Babu: <a href=\"https://wa.me/+918590507058\">WhatsApp</a>"
   },
@@ -113,6 +149,9 @@
     "EVENT TIMES": "01:00 PM",
     "IMAGE": "data/posters/rapidrumble.jpg",
     "VENUE": "Outdoor",
+    "LINK": "https://makemypass.com/rapid-rumble",
+    "FEES": "₹200 PER HEAD",
+    "SR": "❌",
     "C1": "Sarang A: <a href=\"https://wa.me/+919567161288\">WhatsApp</a>",
     "C2": "Parvathy V: <a href=\"https://wa.me/+919778204708\">WhatsApp</a>"
   }

@@ -1,1 +1,42 @@
-{"total_users": 282, "unique_users": ["6176276853", "2122043816", "1603653415", "1601383218", "1258969138", "1004154587", "5449382454", "918013873", "879889427", "6489552088", "1454974701", "1602353415", "1358134073"], "start_time": 1740118166.6707344, "downtime_periods": [{"start": 1740130607.8349657, "end": 1740130699.7213156}], "commands_used": {"start": 74, "event_details": 69, "contact_team": 64, "results": 14, "bot_status": 25}}
+{
+    "total_users": 10,
+    "unique_users": {
+        "6176276853": "Anonymous",
+        "2122043816": "Anonymous",
+        "1603653415": "Anonymous",
+        "1601383218": "Anonymous",
+        "1258969138": "Anonymous",
+        "1004154587": "Anonymous",
+        "5449382454": "Anonymous",
+        "918013873": "Anonymous",
+        "879889427": "Anonymous",
+        "6489552088": "Anonymous",
+        "1454974701": "Anonymous",
+        "1602353415": "Anonymous",
+        "1358134073": "Anonymous",
+        "2076126951": "Anonymous",
+        "1477557021": "Anonymous",
+        "1160867286": "Anonymous",
+        "1166602865": "Anonymous",
+        "2127358369": "Anonymous",
+        "6008954639": "Anonymous",
+        "855449556": "Anonymous",
+        "1252209627": "Anonymous",
+        "7124767360": "Anonymous",
+        "1154800981": "Anonymous"
+    },
+    "start_time": 1740118166.6707344,
+    "downtime_periods": [
+        {
+            "start": 1740130608.8349657,
+            "end": 1740130349.7213156
+        }
+    ],
+    "commands_used": {
+        "start": 14,
+        "event_details": 22,
+        "contact_team": 9,
+        "results": 2,
+        "bot_status": 1
+    }
+}

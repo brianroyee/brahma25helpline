@@ -12,10 +12,13 @@
     "C2": "Asfan MM: <a href=\"https://wa.me/+919745461727\">WhatsApp</a>"
   },
   {
-    "EVENT DATE": "Day 2",
+    "EVENT DATE": "Day 3",
     "EVENT NAME": "KNIVES OUT",
     "EVENT TIMES": "10:00 AM ",
     "VENUE": "S06",
+    "LINK": "https://makemypass.com/knives-out",
+    "FEES": "₹150 per team",
+    "SR": "✅",
     "IMAGE": "data/posters/knivesout.jpeg",
     "C1": "Nogil Binu: <a href=\"https://wa.me/+919061073470\">WhatsApp</a>",
     "C2": "Merin: <a href=\"https://wa.me/+919544220586\">WhatsApp</a>"
@@ -25,6 +28,9 @@
     "EVENT NAME": "GAME OF ROOMS",
     "EVENT TIMES": "10:00 AM",
     "VENUE": "S07",
+    "LINK": "https://makemypass.com/game-of-rooms",
+    "FEES": "₹100 per head",
+    "SR": "✅",
     "IMAGE": "data/posters/gor.jpeg",
     "C1": "Balagopal: <a href=\"https://wa.me/+918590680418\">WhatsApp</a>",
     "C2": "Ashish: <a href=\"https://wa.me/+917994099585\">WhatsApp</a>"
@@ -34,6 +40,9 @@
     "EVENT NAME": "HANGING BAR",
     "EVENT TIMES": "10:00 AM",
     "VENUE": "In Front of Basketball Court",
+    "LINK": "https://makemypass.com/hanging-bar",
+    "FEES": "₹80 per head",
+    "SR": "✅",
     "IMAGE": "data/posters/hb.jpeg",
     "C1": "Afnaan: <a href=\"https://wa.me/+919946123810\">WhatsApp</a>",
     "C2": "Midhun: <a href=\"https://wa.me/+916282608636\">WhatsApp</a>"
@@ -43,6 +52,9 @@
     "EVENT NAME": "PAINT BALL",
     "EVENT TIMES": "10:00 AM ",
     "VENUE": "In Front of CNC Lab",
+    "LINK": "https://makemypass.com/spot-photography",
+    "FEES": "₹300 per team",
+    "SR": "✅",
     "IMAGE": "data/posters/paintball.jpeg",
     "C1": "Kailas: <a href=\"https://wa.me/+919037563340\">WhatsApp</a>",
     "C2": "Jeevan: <a href=\"https://wa.me/+917736646571\">WhatsApp</a>"
@@ -52,6 +64,9 @@
     "EVENT NAME": "RETRO CARROMS",
     "EVENT TIMES": "10:00 AM",
     "VENUE": "EC Mini Seminar Hall",
+    "LINK": "https://makemypass.com/retro-carroms",
+    "FEES": "₹120 per team",
+    "SR": "✅",
     "IMAGE": "data/posters/carroms.jpeg",
     "C1": "Akshay: <a href=\"https://wa.me/+918848364469\">WhatsApp</a>",
     "C2": "Afsal: <a href=\"https://wa.me/+919037420589\">WhatsApp</a>"
@@ -61,6 +76,9 @@
     "EVENT NAME": "FIFA FEVER",
     "EVENT TIMES": "10:00 AM ",
     "VENUE": "Microcontroller Lab",
+    "LINK": "https://makemypass.com/fifa-fever",
+    "FEES": "----",
+    "SR": "✅",
     "IMAGE": "data/posters/fifafever.jpeg",
     "C1": "Adithya: <a href=\"https://wa.me/+919656244055\">WhatsApp</a>",
     "C2": "Aravind: <a href=\"https://wa.me/+918086756043\">WhatsApp</a>"
@@ -70,6 +88,9 @@
     "EVENT NAME": "PRODUCT PIONEERS",
     "EVENT TIMES": "10:30 AM",
     "VENUE": "MBA Block",
+    "LINK": "https://makemypass.com/product-pioneers",
+    "FEES": "₹400 per team",
+    "SR": "✅",
     "IMAGE": "data/posters/pp.jpeg",
     "C1": "Navya Cijo: <a href=\"https://wa.me/+918281230301\">WhatsApp</a>",
     "C2": "Devika N A: <a href=\"https://wa.me/+919847270812\">WhatsApp</a>"
@@ -78,7 +99,10 @@
     "EVENT DATE": "Day 2",
     "EVENT NAME": "MILTIA MADNESS",
     "EVENT TIMES": "11:00 AM",
-    "VENUE": "S02",
+    "VENUE": "S05",
+    "LINK": "https://makemypass.com/miltia-madness",
+    "FEES": "₹400 per team",
+    "SR": "✅",
     "IMAGE": "data/posters/miltia.jpeg",
     "C1": "Rabeeh: <a href=\"https://wa.me/+919072722603\">WhatsApp</a>",
     "C2": "Athul: <a href=\"https://wa.me/+919188638542\">WhatsApp</a>"
@@ -88,6 +112,9 @@
     "EVENT NAME": "CLUE CRUSADE",
     "EVENT TIMES": "11:00 AM",
     "VENUE": "College Premises",
+    "LINK": "https://makemypass.com/clue-crusade",
+    "FEES": "₹150 per head",
+    "SR": "✅",
     "IMAGE": "data/posters/clue.jpeg",
     "C1": "Fathima: <a href=\"https://wa.me/+919778206155\">WhatsApp</a>",
     "C2": "Ziyad: <a href=\"https://wa.me/+919995881263\">WhatsApp</a>"
@@ -97,6 +124,9 @@
     "EVENT NAME": "GLOW BALL",
     "EVENT TIMES": "11:00 AM",
     "VENUE": "S06",
+    "LINK": "https://makemypass.com/glow-ball",
+    "FEES": "₹150 per head",
+    "SR": "✅",
     "IMAGE": "data/posters/glowball.jpeg",
     "C1": "Adithyan: <a href=\"https://wa.me/+918589052075\">WhatsApp</a>",
     "C2": "Abhinand: <a href=\"https://wa.me/+919446010600\">WhatsApp</a>"
@@ -105,7 +135,10 @@
     "EVENT DATE": "Day 2",
     "EVENT NAME": "SOAPY SOCCER ",
     "EVENT TIMES": "11:00 AM",
-    "VENUE": "College two wheeler parking",
+    "VENUE": "Civil Block",
+    "LINK": "https://makemypass.com/soapy-soccer",
+    "FEES": "₹300 per head",
+    "SR": "✅",
     "IMAGE": "data/posters/soapy.jpeg",
     "C1": "Abhimanyu: <a href=\"https://wa.me/+919778743668\">WhatsApp</a>",
     "C2": "Althaf: <a href=\"https://wa.me/+919961571611\">WhatsApp</a>"
@@ -115,6 +148,9 @@
     "EVENT NAME": "ASIET TALKIES",
     "EVENT TIMES": "01:00 pm",
     "VENUE": "Main Seminar Hall",
+    "LINK": "https://makemypass.com/asiet-talkies",
+    "FEES": "₹1600 per team",
+    "SR": "✅",
     "IMAGE": "data/posters/talkies.jpeg",
     "C1": "Abhijith: <a href=\"https://wa.me/+919496990487\">WhatsApp</a>",
     "C2": "Athul: <a href=\"https://wa.me/+917736624675\">WhatsApp</a>"
@@ -124,6 +160,9 @@
     "EVENT NAME": "UNDERARM CRICKET",
     "EVENT TIMES": "10:00 am",
     "VENUE": "College Ground",
+    "LINK": "https://makemypass.com/under-arm-cricket",
+    "FEES": "₹300 per team",
+    "SR": "✅",
     "IMAGE": "data/posters/underarmcricket.jpeg",
     "C1": "Sanal: <a href=\"https://wa.me/+917736920275\">WhatsApp</a>",
     "C2": "Richard: <a href=\"https://wa.me/+919846401899\">WhatsApp</a>"
@@ -133,6 +172,9 @@
     "EVENT NAME": "STRIKE 3",
     "EVENT TIMES": "10:00 am",
     "VENUE": "Basketball Court",
+    "LINK": "https://makemypass.com/strike-3",
+    "FEES": "---",
+    "SR": "✅",
     "IMAGE": "data/posters/strike3.jpeg",
     "C1": "Abinand: <a href=\"https://wa.me/+918301066741\">WhatsApp</a>",
     "C2": "Shiv Sajob: <a href=\"https://wa.me/+919656381560\">WhatsApp</a>"
@@ -142,6 +184,9 @@
     "EVENT NAME": "RING TOSS",
     "EVENT TIMES": "10:00 am",
     "VENUE": "Near Lobby",
+    "LINK": "https://makemypass.com/ring-toss",
+    "FEES": "₹50 PER PERSON (3 Throws)",
+    "SR": "✅",
     "IMAGE": "data/posters/ringtoss.jpeg",
     "C1": "Amruth: <a href=\"https://wa.me/+919048934255\">WhatsApp</a>",
     "C2": "Arjun: <a href=\"https://wa.me/+918590740227\">WhatsApp</a>"
@@ -151,18 +196,21 @@
     "EVENT NAME": "SUMO WRESTLING",
     "EVENT TIMES": "10:00 AM ",
     "VENUE": "In Front of CCF Lab",
+    "LINK": "https://makemypass.com/sumo-wrestling",
+    "FEES": "₹150 per head",
+    "SR": "✅",
     "IMAGE": "data/posters/sumo.jpeg",
-    "C1": "Resin: <a href=\"https://wa.me/+917356534399\">WhatsApp</a>",
-    "C2": "Balu: <a href=\"https://wa.me/+916282758498\">WhatsApp</a>"
+    "C1": "Resin MJ: <a href=\"https://wa.me/+917356534399\">WhatsApp</a>",
+    "C2": "Balu Sajeev: <a href=\"https://wa.me/+916282758498\">WhatsApp</a>"
   },
   {
     "EVENT DATE": "Day 3",
     "EVENT NAME": "RJ Hunt",
-    "EVENT TIMES": "01:00 AM",
-    "VENUE": "Main Stage",
+    "EVENT TIMES": "10:00 AM",
+    "VENUE": "Main Seminar Hall",
     "IMAGE": "data/posters/rj.jpeg",
-    "LINK": "nil",
-    "FEES": "nil",
+    "LINK": "https://makemypass.com/rjhunt-brahma",
+    "FEES": "₹200 PER HEAD",
     "SR": "✅",
     "C1": "Lakshmi: <a href=\"https://wa.me/+919746484962\">WhatsApp</a>",
     "C2": "Dilna: <a href=\"https://wa.me/+917736891770\">WhatsApp</a>"
@@ -172,6 +220,9 @@
     "EVENT NAME": "BIZQUEST",
     "EVENT TIMES": "10:00 AM ",
     "VENUE": "MBA Block",
+    "LINK": "https://makemypass.com/bizquest",
+    "FEES": "₹800 PER TEAM",
+    "SR": "✅",
     "IMAGE": "data/posters/bizq.jpeg",
     "C1": "Muhammad Asif: <a href=\"https://wa.me/+917558895327\">WhatsApp</a>",
     "C2": "Prajeesha: <a href=\"https://wa.me/+917592872642\">WhatsApp</a>"
@@ -181,6 +232,9 @@
     "EVENT NAME": "ETHEREA - Modelling Workshop",
     "EVENT TIMES": "10:30 AM",
     "VENUE": "Auditorium",
+    "LINK": "https://makemypass.com/etherea-modelling",
+    "FEES": "₹300 per head",
+    "SR": "✅",
     "IMAGE": "data/posters/model.jpeg",
     "C1": "Sanchu: <a href=\"https://wa.me/+917994354938\">WhatsApp</a>",
     "C2": "Ajishmi: <a href=\"https://wa.me/+918590658416\">WhatsApp</a>"
