@@ -110,10 +110,9 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         [InlineKeyboardButton("🕗 Event Timeline", callback_data='event_timeline')],
         [InlineKeyboardButton("👥 Contact Team", callback_data='coordinators')],
         [InlineKeyboardButton("🏆 Event Results", callback_data='results')],
-        [InlineKeyboardButton("📊 Bot Status", callback_data='bot_status')],
-        [InlineKeyboardButton("👨‍💻 Developer Info", callback_data='developers')],
-        [InlineKeyboardButton("⚠️ Report Issue", callback_data='report_issue')]
-
+#        [InlineKeyboardButton("📊 Bot Status", callback_data='bot_status')],
+        [InlineKeyboardButton("👨‍💻 Developer Info", callback_data='developers')]
+#        [InlineKeyboardButton("⚠️ Report Issue", callback_data='report_issue')]
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
     await update.message.reply_text(WELCOME_MESSAGE, reply_markup=reply_markup, parse_mode='Markdown')
@@ -354,8 +353,9 @@ async def show_event_details(update: Update, context: ContextTypes.DEFAULT_TYPE)
             
             #back button to return to events list
             back_callback = f'{category}_{event_day}'
-            keyboard = [[InlineKeyboardButton("🔙 Back to Events", callback_data=back_callback)],
-            [InlineKeyboardButton("⚠️ Report Issue", callback_data='report_issue')]] #temporary 
+            keyboard = [[InlineKeyboardButton("🔙 Back to Events", callback_data=back_callback)]
+#                        [InlineKeyboardButton("⚠️ Report Issue", callback_data='report_issue')]
+                        ]
             reply_markup = InlineKeyboardMarkup(keyboard)
             
             #delete old message and send new one
@@ -422,9 +422,9 @@ async def back_to_start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         [InlineKeyboardButton("🕗 Event Timeline", callback_data='event_timeline')],
         [InlineKeyboardButton("👥 Contact Team", callback_data='coordinators')],
         [InlineKeyboardButton("🏆 Event Results", callback_data='results')],
-        [InlineKeyboardButton("📊 Bot Status", callback_data='bot_status')],
-        [InlineKeyboardButton("👨‍💻 Developer Info", callback_data='developers')],
-        [InlineKeyboardButton("⚠️ Report Issue", callback_data='report_issue')]
+#        [InlineKeyboardButton("📊 Bot Status", callback_data='bot_status')],
+        [InlineKeyboardButton("👨‍💻 Developer Info", callback_data='developers')]
+#        [InlineKeyboardButton("⚠️ Report Issue", callback_data='report_issue')]
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
     await query.message.edit_text(WELCOME_MESSAGE, reply_markup=reply_markup, parse_mode='Markdown')
@@ -652,6 +652,7 @@ async def show_bot_status(update: Update, context: ContextTypes.DEFAULT_TYPE):
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back", callback_data='start')]]),
             parse_mode='Markdown'
         )
+
 
 def record_downtime(is_down=True):
     """Record bot downtime periods."""
@@ -885,10 +886,10 @@ def main():
     app.add_handler(CallbackQueryHandler(back_to_start, pattern='^start$'))
     app.add_handler(CallbackQueryHandler(results_day_selection,pattern='^results$'))
     app.add_handler(CallbackQueryHandler(show_results, pattern='^results_Day [1-3]$'))
-    app.add_handler(CallbackQueryHandler(show_bot_status, pattern='^bot_status$'))
+#    app.add_handler(CallbackQueryHandler(show_bot_status, pattern='^bot_status$'))
     app.add_handler(CallbackQueryHandler(timeline_day_selection, pattern='^event_timeline$'))
     app.add_handler(CallbackQueryHandler(show_timeline, pattern='^timeline_Day [1-3]$'))
-    app.add_handler(CallbackQueryHandler(prompt_report_issue, pattern='^report_issue$'))
+#    app.add_handler(CallbackQueryHandler(prompt_report_issue, pattern='^report_issue$'))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_issue_report))
     app.add_handler(CallbackQueryHandler(show_developers, pattern='^developers$'))
     app.add_handler(CallbackQueryHandler(show_connection, pattern='^connection$'))
