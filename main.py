@@ -82,7 +82,9 @@ def update_stats(user_id, command, username=None):
             json.dump(stats, f, indent=4)
             
     except Exception as e:
-        print(f"Error updating stats: {e}")
+        print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] [STATS] Error updating stats: {e}")
+
+
 
 WELCOME_MESSAGE = """
 🎉 *Brahma'25 helpline Bot!* 🎉
@@ -263,7 +265,7 @@ async def show_events(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back", callback_data=f'Day {day[-1]}')]])
             )
     except telegram.error.BadRequest as e:
-        print(f"Error in show_events: {e}")
+        print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] [SHOW_EVENTS] Message edit error: {e}")
         if "There is no text in the message to edit" in str(e):
             try:
                 # Delete old message if possible
@@ -294,7 +296,7 @@ async def show_events(update: Update, context: ContextTypes.DEFAULT_TYPE):
                         reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back", callback_data=f'Day {day[-1]}')]])
                     )
             except Exception as new_e:
-                print(f"Failed to send new message: {new_e}")    
+                 print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] [SHOW_EVENTS] Message edit error: {e}")    
 
 
 async def show_event_details(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -357,8 +359,8 @@ async def show_event_details(update: Update, context: ContextTypes.DEFAULT_TYPE)
             #delete old message and send new one
             try:
                 await query.message.delete()
-            except Exception as del_e:
-                print(f"Could not delete message: {del_e}")
+            except Exception as e:
+                print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] [EVENT_DETAILS] Error: {e}")
             
             if "IMAGE" in event and event["IMAGE"]:
                 try:
@@ -495,7 +497,7 @@ For refreshment related queries, please contact the above team.
 
 _Emergency Contacts:_ 
 ```Aleena``` +9181039026386
-```Devika``` +918590282983
+```Devika Ajith``` +918590282983
 
 For any medical assistance/emergency during the event, please contact the above team.
         """,
@@ -506,7 +508,7 @@ For any medical assistance/emergency during the event, please contact the above 
 
 _Coordinators:_
 ```Dhrupath``` +919400941004
-```Yadhu``` +918138835700
+```Devika``` +918590282983
 
 For any discipline related concerns, please contact the above team.
         """
@@ -668,7 +670,7 @@ def record_downtime(is_down=True):
         with open(FILES["stats"], 'w') as f:
             json.dump(stats, f)
     except Exception as e:
-        print(f"Error recording downtime: {e}")
+        print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] [DOWNTIME] Error recording downtime: {e}")
 async def show_developers(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
@@ -766,7 +768,7 @@ async def handle_issue_report(update: Update, context: ContextTypes.DEFAULT_TYPE
             await update.message.reply_text("✅ Thank you for reporting the issue! We'll review it shortly.")
             
         except Exception as e:
-            print(f"Error saving issue: {e}")
+            print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] [ISSUE_REPORT] Error saving issue: {e}")
             await update.message.reply_text(
                 "❌ Failed to save your report. Please try again later.",
                 reply_markup=InlineKeyboardMarkup(
@@ -842,7 +844,7 @@ async def broadcast_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 success += 1
             except Exception as e:
                 username = stats["unique_users"].get(user_id, "Unknown")
-                print(f"Failed to send to {username} ({user_id}): {e}")
+                print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] [BROADCAST] Error: {e}")
                 failures += 1
                 
         await update.message.reply_text(
@@ -896,7 +898,7 @@ def main():
     try:
         app.run_polling()
     except Exception as e:
-        print(f"Bot crashed with error: {e}")
+        print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] [MAIN] Bot crashed with error: {e}")
         # Record that the bot is down
         record_downtime(is_down=True)
         raise e
