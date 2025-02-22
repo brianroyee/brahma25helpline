@@ -1,5 +1,5 @@
 {
-    "total_users": 23,
+    "total_users": 24,
     "unique_users": {
         "6176276853": "Anonymous",
         "2122043816": "Anonymous",
@@ -36,7 +36,8 @@
         "652130154": "Anonymous",
         "1096649933": "Anonymous",
         "677971101": "Anonymous",
-        "708425045": "Anonymous"
+        "708425045": "Anonymous",
+        "1061022246": "Anonymous"
     },
     "start_time": 1740118166.6707344,
     "downtime_periods": [
@@ -46,10 +47,10 @@
         }
     ],
     "commands_used": {
-        "start": 30,
-        "event_details": 44,
-        "contact_team": 22,
-        "results": 7,
+        "start": 31,
+        "event_details": 45,
+        "contact_team": 28,
+        "results": 8,
         "bot_status": 4
     }
 }
