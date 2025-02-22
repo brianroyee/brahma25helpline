@@ -2,31 +2,36 @@ import json
 import time
 import telegram
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
-from telegram.ext import Application, CommandHandler, CallbackQueryHandler, ContextTypes
+from telegram.ext import Application, CommandHandler, CallbackQueryHandler, ContextTypes, MessageHandler, filters
 import sys
 from pathlib import Path
-
 from dotenv import load_dotenv
 import os 
 
 load_dotenv()
-
 TOKEN= os.getenv('TOKEN')
 
 sys.path.append("/home/teknikal/Desktop/HC EVENTS/telegram bot")
-#from config import TOKEN
 
-# File paths using Path for better cross-platform compatibility
+#path directory
 DATA_DIR = Path("./data")
 FILES = {
     "general": DATA_DIR / "general.json",
     "cultural": DATA_DIR / "cultural.json",
     "technical": DATA_DIR / "technical.json",
     "results": DATA_DIR / "results.json",
-    "stats": DATA_DIR / "bot_stats.json"  
-}
+    "stats": DATA_DIR / "bot_stats.json"
+}  
 
-# Ensure stats file exists
+def initialize_files():
+    initialize_stats_file()
+
+    # Initialize issues file
+    issues_file = DATA_DIR / "issues.json"
+    if not issues_file.exists():
+        with open(issues_file, 'w') as f:
+            json.dump([], f)
+
 def initialize_stats_file():
     stats_file = FILES["stats"]
     if not stats_file.exists():
@@ -44,33 +49,38 @@ def initialize_stats_file():
             }
         }
         with open(stats_file, 'w') as f:
-            # Convert set to list for JSON serialization
             stats_copy = default_stats.copy()
             stats_copy["unique_users"] = list(stats_copy["unique_users"])
             json.dump(stats_copy, f)
     return
 
+
 # Update bot stats
-def update_stats(user_id, command):
+def update_stats(user_id, command, username=None):
     try:
         stats_file = FILES["stats"]
         with open(stats_file, 'r') as f:
             stats = json.load(f)
         
-        # Convert unique_users back to set for processing
-        stats["unique_users"] = set(stats["unique_users"])
+        # Convert existing list to dictionary if needed
+        if isinstance(stats["unique_users"], list):
+            stats["unique_users"] = {str(uid): "Anonymous" for uid in stats["unique_users"]}
         
-        # Update stats
-        stats["total_users"] += 1
-        stats["unique_users"].add(str(user_id))
+        user_id_str = str(user_id)
+        username = username or "Anonymous"
+        
+        # Update unique users
+        if user_id_str not in stats["unique_users"]:
+            stats["total_users"] += 1
+        stats["unique_users"][user_id_str] = username
+        
+        # Update command count
         if command in stats["commands_used"]:
             stats["commands_used"][command] += 1
         
-        # Convert set back to list for JSON storage
-        stats["unique_users"] = list(stats["unique_users"])
-        
         with open(stats_file, 'w') as f:
-            json.dump(stats, f)
+            json.dump(stats, f, indent=4)
+            
     except Exception as e:
         print(f"Error updating stats: {e}")
 
@@ -82,7 +92,7 @@ How can I help you today?
 """
 
 COORDINATOR_MESSAGE = """
-👥 *Brahma'25 Organizing Team*
+👥 *Brahma'25 Organizing Committee*
 
 Select a team to view their details:
 """
@@ -97,7 +107,8 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         [InlineKeyboardButton("👥 Contact Team", callback_data='coordinators')],
         [InlineKeyboardButton("🏆 Event Results", callback_data='results')],
         [InlineKeyboardButton("📊 Bot Status", callback_data='bot_status')],
-        [InlineKeyboardButton("👨‍💻 Developer Info", callback_data='developers')]
+        [InlineKeyboardButton("👨‍💻 Developer Info", callback_data='developers')],
+        [InlineKeyboardButton("⚠️ Report Issue", callback_data='report_issue')]
 
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
@@ -115,7 +126,7 @@ async def timeline_day_selection(update: Update, context: ContextTypes.DEFAULT_T
         [InlineKeyboardButton("🔙 Back to Main Menu", callback_data='start')]
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
-    await query.message.edit_text("📅 *Select a day to view the timeline:*", reply_markup=reply_markup, parse_mode='Markdown')
+    await query.message.edit_text("📅 *SELECT THE DAY OF THE EVENT:*", reply_markup=reply_markup, parse_mode='Markdown')
 
 def get_all_events_by_time(day: str) -> dict:
     """Fetch and combine events from all categories for a specific day, sorted by time."""
@@ -130,7 +141,6 @@ def get_all_events_by_time(day: str) -> dict:
             try:
                 with open(file_path, "r") as file:
                     events = json.load(file)
-                    # Filter events for the specific day
                     day_events = [event for event in events if event["EVENT DATE"] == day]
                     
                     # Group events by time
@@ -142,16 +152,13 @@ def get_all_events_by_time(day: str) -> dict:
             except (json.JSONDecodeError, FileNotFoundError):
                 continue
     
-    # Convert times to 24-hour format for sorting
     def time_to_24hr(time_str):
         try:
-            # Parse time like "9:00 AM" or "02:30 PM"
             time_obj = time.strptime(time_str, "%I:%M %p")
             return time.strftime("%H:%M", time_obj)
         except:
-            return "00:00"  # Default value for invalid times
+            return "00:00"  
     
-    # Sort by converted 24-hour time
     sorted_events = dict(sorted(all_events.items(), 
                               key=lambda x: time_to_24hr(x[0])))
     
@@ -169,9 +176,9 @@ async def show_timeline(update: Update, context: ContextTypes.DEFAULT_TYPE):
         message = f"📅 Timeline for {day}\n\n"
         
         for time_slot, events in events_by_time.items():
-            message += f"*{time_slot}*\n"
+            message += f"`{time_slot}`\n"
             for event in events:
-                message += f"• {event}\n"
+                message += f">> _{event}_\n"
             message += "\n"
     else:
         message = f"No events scheduled for {day} yet!"
@@ -195,7 +202,7 @@ async def day_selection(update: Update, context: ContextTypes.DEFAULT_TYPE):
         [InlineKeyboardButton("🔙 Back to Main Menu", callback_data='start')]
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
-    await query.message.edit_text("📅 *Which day would you like to explore?*", reply_markup=reply_markup, parse_mode='Markdown')
+    await query.message.edit_text("📅 *SELECT THE DAY OF THE EVENT*", reply_markup=reply_markup, parse_mode='Markdown')
 
 async def events_menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
@@ -257,7 +264,6 @@ async def show_events(update: Update, context: ContextTypes.DEFAULT_TYPE):
             )
     except telegram.error.BadRequest as e:
         print(f"Error in show_events: {e}")
-        # If we can't edit, try sending a new message
         if "There is no text in the message to edit" in str(e):
             try:
                 # Delete old message if possible
@@ -265,7 +271,6 @@ async def show_events(update: Update, context: ContextTypes.DEFAULT_TYPE):
                     await query.message.delete()
                 except:
                     pass
-                
                 # Send as new message
                 if events:
                     keyboard = [
@@ -306,7 +311,6 @@ async def show_event_details(update: Update, context: ContextTypes.DEFAULT_TYPE)
                 reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back", callback_data='day_selection')]])
             )
         except telegram.error.BadRequest:
-            # If edit fails, send new message
             await context.bot.send_message(
                 chat_id=query.message.chat_id,
                 text="❌ Event details not available.",
@@ -344,12 +348,13 @@ async def show_event_details(update: Update, context: ContextTypes.DEFAULT_TYPE)
 
             """
             
-            # Create back button to return to events list
+            #back button to return to events list
             back_callback = f'{category}_{event_day}'
-            keyboard = [[InlineKeyboardButton("🔙 Back to Events", callback_data=back_callback)]]
+            keyboard = [[InlineKeyboardButton("🔙 Back to Events", callback_data=back_callback)],
+            [InlineKeyboardButton("⚠️ Report Issue", callback_data='report_issue')]] #temporary 
             reply_markup = InlineKeyboardMarkup(keyboard)
             
-            # Always delete old message and send new one - most reliable approach
+            #delete old message and send new one
             try:
                 await query.message.delete()
             except Exception as del_e:
@@ -414,7 +419,8 @@ async def back_to_start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         [InlineKeyboardButton("👥 Contact Team", callback_data='coordinators')],
         [InlineKeyboardButton("🏆 Event Results", callback_data='results')],
         [InlineKeyboardButton("📊 Bot Status", callback_data='bot_status')],
-        [InlineKeyboardButton("👨‍💻 Developer Info", callback_data='developers')]
+        [InlineKeyboardButton("👨‍💻 Developer Info", callback_data='developers')],
+        [InlineKeyboardButton("⚠️ Report Issue", callback_data='report_issue')]
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
     await query.message.edit_text(WELCOME_MESSAGE, reply_markup=reply_markup, parse_mode='Markdown')
@@ -531,6 +537,52 @@ async def results_day_selection(update: Update, context: ContextTypes.DEFAULT_TY
     reply_markup = InlineKeyboardMarkup(keyboard)
     await query.message.edit_text("🏆 *Select the day to view event results:*", reply_markup=reply_markup, parse_mode='Markdown')
 
+async def show_results(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Display results for the selected day."""
+    query = update.callback_query
+    await query.answer()
+    
+    day = query.data.split('_')[1]
+    results_file = FILES["results"]
+    
+    try:
+        with open(results_file, 'r') as f:
+            results_data = json.load(f)
+        
+        day_results = [result for result in results_data if result["EVENT DATE"] == day]
+        
+        if day_results:
+            message = f"🏆 *Results for {day}*\n\n"
+            for result in day_results:
+                message += f" ```{result['EVENT NAME']}```\n"
+                message += f"🥇 1st: {result['WINNER 1']}\n"
+                if result['WINNER 2'].strip():
+                    message += f"🥈 2nd: {result['WINNER 2']}\n"
+                if result['WINNER 3'].strip():
+                    message += f"🥉 3rd: {result['WINNER 3']}\n"
+                message += "\n"
+        else:
+            message = f"No results available for {day} yet!"
+        
+        keyboard = [
+            [InlineKeyboardButton("🔙 Back to Days", callback_data='results')],
+            [InlineKeyboardButton("🏠 Main Menu", callback_data='start')]
+        ]
+        reply_markup = InlineKeyboardMarkup(keyboard)
+        
+        await query.message.edit_text(
+            message,
+            reply_markup=reply_markup,
+            parse_mode='Markdown'
+        )
+        
+    except Exception as e:
+        print(f"Error showing results: {e}")
+        await query.message.edit_text(
+            "❌ Could not retrieve results. Please try again later.",
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back", callback_data='results')]])
+        )
+
 async def show_bot_status(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Display bot status and statistics."""
     query = update.callback_query
@@ -553,12 +605,12 @@ async def show_bot_status(update: Update, context: ContextTypes.DEFAULT_TYPE):
         # Format uptime
         uptime_str = f"{int(days)}d {int(hours)}h {int(minutes)}m {int(seconds)}s"
         
-        # Get downtime information
+        # Get downtime
         downtime_count = len(stats["downtime_periods"])
         total_downtime = sum([period["end"] - period["start"] for period in stats["downtime_periods"]], 0)
         downtime_hours = total_downtime / 3600 if total_downtime else 0
         
-        # Create status message
+        #status message
         status_message = f"""
 📊 *BOT STATUS REPORT*
 
@@ -655,8 +707,11 @@ async def show_connection(update: Update, context: ContextTypes.DEFAULT_TYPE):
 📍[ASHWIN P SHINE](https://www.linkedin.com/in/ashwin-p-shine/)
 📍[CHANDRA RAJESH](https://www.linkedin.com/in/chandra-rajesh/)
 📍[DEEPAK M.R.](https://www.linkedin.com/in/deepak-m-r-ab601a291/)
-📍[ANANTHAKRISHNAN](https://www.google.com)
+📍[ANANTHAKRISHNAN](https://)
 📍[CEEYA SARAH VARGHESE](https://www.linkedin.com/in/ceeya-sarah-varghese-38280632a/)
+
+    For issues/conflicts:
+    WhatsApp : [Developer Team](https://wa.me/+919995965621)
     """
 
     keyboard = [[InlineKeyboardButton("🔙 Back to Developer Info", callback_data='developers')]]
@@ -664,9 +719,145 @@ async def show_connection(update: Update, context: ContextTypes.DEFAULT_TYPE):
     
     await query.message.edit_text(dev_message, reply_markup=reply_markup, parse_mode='Markdown')
 
+async def prompt_report_issue(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Prompt user to describe the issue"""
+    query = update.callback_query
+    await query.answer()
+    context.user_data['reporting_issue'] = True
+    await query.message.reply_text("📝 Please describe the issue you're experiencing:")
+
+async def handle_issue_report(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Save user's issue report"""
+    if context.user_data.get('reporting_issue'):
+        user = update.message.from_user
+        issue_data = {
+            "user_id": user.id,
+            "username": user.username or user.first_name,
+            "issue": update.message.text,
+            "timestamp": time.time(),
+            "resolved": False
+        }
+        
+        try:
+            # Ensure data directory exists
+            DATA_DIR.mkdir(exist_ok=True)
+            
+            issues_file = DATA_DIR / "issues.json"
+            
+            # Initialize with empty list if file is empty/corrupted
+            if not issues_file.exists() or issues_file.stat().st_size == 0:
+                with open(issues_file, 'w') as f:
+                    json.dump([], f)
+            
+            # Load existing issues safely
+            with open(issues_file, 'r') as f:
+                try:
+                    issues = json.load(f)
+                except json.JSONDecodeError:
+                    issues = []
+            
+            # Append new issue
+            issues.append(issue_data)
+            
+            # Save back to file
+            with open(issues_file, 'w') as f:
+                json.dump(issues, f, indent=4)
+            
+            await update.message.reply_text("✅ Thank you for reporting the issue! We'll review it shortly.")
+            
+        except Exception as e:
+            print(f"Error saving issue: {e}")
+            await update.message.reply_text(
+                "❌ Failed to save your report. Please try again later.",
+                reply_markup=InlineKeyboardMarkup(
+                    [[InlineKeyboardButton("🔙 Contact Developers", callback_data='developers')]]
+                )
+            )
+        finally:
+            # Clear reporting state
+            if 'reporting_issue' in context.user_data:
+                del context.user_data['reporting_issue']
+
+async def toggle_notifications(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Toggle user's notification preference"""
+    query = update.callback_query
+    await query.answer()
+    
+    user_id = update.effective_user.id
+    notifications_file = FILES["notifications"]
+    
+    try:
+        with open(notifications_file, 'r') as f:
+            data = json.load(f)
+        
+        if str(user_id) in data["subscribed_users"]:
+            data["subscribed_users"].remove(str(user_id))
+            response = "🔕 Notifications disabled. You'll miss important updates!"
+        else:
+            data["subscribed_users"].append(str(user_id))
+            response = "🔔 Notifications enabled! You'll receive important updates."
+        
+        with open(notifications_file, 'w') as f:
+            json.dump(data, f)
+            
+        await query.message.edit_text(response)
+        
+    except Exception as e:
+        print(f"Notification error: {e}")
+        await query.message.reply_text("❌ Could not update preferences. Please try again.")
+
+async def broadcast_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Admin-only broadcast command"""
+    ADMIN_IDS = [int(id.strip()) for id in os.getenv('ADMINS', '').split(',') if id.strip()]
+    
+    if update.effective_user.id not in ADMIN_IDS:
+        await update.message.reply_text("❌ Unauthorized access.")
+        return
+    
+    if not context.args:
+        await update.message.reply_text("Usage: /broadcast <message>")
+        return
+        
+    message = ' '.join(context.args)
+    
+    try:
+        with open(FILES["stats"], 'r') as f:
+            stats = json.load(f)
+        
+        success = 0
+        failures = 0
+        
+        # Handle legacy list format
+        if isinstance(stats["unique_users"], list):
+            # Convert old list format to dictionary
+            stats["unique_users"] = {str(uid): "Anonymous" for uid in stats["unique_users"]}
+            
+        for user_id in stats["unique_users"].keys():
+            try:
+                await context.bot.send_message(
+                    chat_id=int(user_id),
+                    text=f"📢 Important Announcement!\n\n{message}",
+                    parse_mode='Markdown'
+                )
+                success += 1
+            except Exception as e:
+                username = stats["unique_users"].get(user_id, "Unknown")
+                print(f"Failed to send to {username} ({user_id}): {e}")
+                failures += 1
+                
+        await update.message.reply_text(
+            f"✅ Broadcast completed!\n"
+            f"Total users: {len(stats['unique_users'])}\n"
+            f"Success: {success}\n"
+            f"Failures: {failures}"
+        )
+                
+    except Exception as e:
+        print(f"Broadcast error: {e}")
+        await update.message.reply_text("❌ Failed to send broadcast.")
+
 
 def main():
-    """Initialize and run the bot."""
     print("🤖 BRAHMA'25 BOT: ONLINE")
     
     # Initialize the stats file if it doesn't exist
@@ -688,14 +879,19 @@ def main():
     app.add_handler(CallbackQueryHandler(show_team_details, pattern='^coord_.*'))
     app.add_handler(CallbackQueryHandler(back_to_start, pattern='^start$'))
     app.add_handler(CallbackQueryHandler(results_day_selection,pattern='^results$'))
+    app.add_handler(CallbackQueryHandler(show_results, pattern='^results_Day [1-3]$'))
     app.add_handler(CallbackQueryHandler(show_bot_status, pattern='^bot_status$'))
     app.add_handler(CallbackQueryHandler(timeline_day_selection, pattern='^event_timeline$'))
     app.add_handler(CallbackQueryHandler(show_timeline, pattern='^timeline_Day [1-3]$'))
+    app.add_handler(CallbackQueryHandler(prompt_report_issue, pattern='^report_issue$'))
+    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_issue_report))
     app.add_handler(CallbackQueryHandler(show_developers, pattern='^developers$'))
     app.add_handler(CallbackQueryHandler(show_connection, pattern='^connection$'))
+    app.add_handler(CallbackQueryHandler(toggle_notifications, pattern='^toggle_notifications$'))
+    app.add_handler(CommandHandler('broadcast', broadcast_command))
 
     
-    print("✅ BOT IS READY TO ASSIST WITH BRAHMA'25 NAVIGATION")
+    print("✅ BOT IS READY TO ASSIST WITH BRAHMA'25")
     
     try:
         app.run_polling()
