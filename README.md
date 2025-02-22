@@ -18,6 +18,7 @@ The **Brahma'25 Navigation Bot** is a Telegram bot designed to assist participan
 - Required dependencies (install using `pip`):
   ```bash
   pip install python-telegram-bot
+  pip install flask
   ```
 ## Commands & Functionalities
 
@@ -32,22 +33,13 @@ The **Brahma'25 Navigation Bot** is a Telegram bot designed to assist participan
 - `📌 [Event Name]` → Get event details including time, venue, and coordinators.
 - `🔙 Back` → Return to the previous menu.
 
-## Code Structure
-```
-/
-├── bot.py                 # Main bot script
-├── config.py              # Configuration file (add bot token here)
-├── data/
-│   ├── general.json       # JSON data for general events
-│   ├── cultural.json      # JSON data for cultural events
-│   ├── technical.json     # JSON data for technical events
-└── README.md              # Documentation
-```
+   
 
-## Contributors
-- **BRIAN ROY MATHEW** - Project Lead & Developer
+## Developers & Contributors
+- **BRIAN ROY MATHEW** - Project Lead/ Developer
+- **SREERAMACHANDRAN S MENON** - Developer/ DevOps
+- **ASHWIN P SHINE** - Developer/ Testing
 - **CEEYA SARAH VARGHESE** - Contributor
-- **ASHWIN P SHINE** - Contributor
 
 _Made with <3 by HackClub ASIET_
 
