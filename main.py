@@ -577,7 +577,7 @@ async def show_results(update: Update, context: ContextTypes.DEFAULT_TYPE):
             "❌ Could not retrieve results. Please try again later.",
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back", callback_data='results')]])
         )
-
+'''
 async def show_bot_status(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Display bot status and statistics."""
     query = update.callback_query
@@ -643,7 +643,7 @@ async def show_bot_status(update: Update, context: ContextTypes.DEFAULT_TYPE):
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back", callback_data='start')]]),
             parse_mode='Markdown'
         )
-
+'''
 
 def record_downtime(is_down=True):
     """Record bot downtime periods."""
@@ -668,11 +668,13 @@ def record_downtime(is_down=True):
 async def show_developers(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
-    
+   
     dev_message = """
 
 *DEVELOPERS:*
- `Brian Roy Mathew`
+ `Brian Roy Mathew` // _Lead Dev_
+ `Sreeramachandran S Menon` // _DevOps Guy_
+
 
 *CONTRIBUTORS*
  `Ashwin P Shine`
@@ -680,7 +682,7 @@ async def show_developers(update: Update, context: ContextTypes.DEFAULT_TYPE):
  `Deepak M.R.`
  `Anandhakrishnan`
  `Ceeya Sarah Varghese`
- `Sreeramachandran S Menon`
+
 
 
 _Developed & Handled with ❤️ by HackClub ASIET_
@@ -706,6 +708,7 @@ async def show_connection(update: Update, context: ContextTypes.DEFAULT_TYPE):
 📍[DEEPAK M.R.](https://www.linkedin.com/in/deepak-m-r-ab601a291/)
 📍[ANANTHAKRISHNAN](https://)
 📍[CEEYA SARAH VARGHESE](https://www.linkedin.com/in/ceeya-sarah-varghese-38280632a/)
+📍[SREERAMACHANDRAN S MENON](https://www.linkedin.com/in/sreeramachandransmenon/)
 
     For issues/conflicts:
     WhatsApp : [Developer Team](https://wa.me/+919995965621)
@@ -883,7 +886,7 @@ def main():
     app.add_handler(CallbackQueryHandler(timeline_day_selection, pattern='^event_timeline$'))
     app.add_handler(CallbackQueryHandler(show_timeline, pattern='^timeline_Day [1-3]$'))
 #    app.add_handler(CallbackQueryHandler(prompt_report_issue, pattern='^report_issue$'))
-    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_issue_report))
+#    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_issue_report))
     app.add_handler(CallbackQueryHandler(show_developers, pattern='^developers$'))
     app.add_handler(CallbackQueryHandler(show_connection, pattern='^connection$'))
     app.add_handler(CallbackQueryHandler(toggle_notifications, pattern='^toggle_notifications$'))
