@@ -25,15 +25,6 @@ FILES = {
     "stats": DATA_DIR / "bot_stats.json"
 }  
 
-def initialize_files():
-    initialize_stats_file()
-
-    # Initialize issues file
-    issues_file = DATA_DIR / "issues.json"
-    if not issues_file.exists():
-        with open(issues_file, 'w') as f:
-            json.dump([], f)
-
 def initialize_stats_file():
     stats_file = FILES["stats"]
     if not stats_file.exists():
@@ -732,56 +723,58 @@ async def prompt_report_issue(update: Update, context: ContextTypes.DEFAULT_TYPE
     await query.message.reply_text("📝 Please describe the issue you're experiencing:")
 
 async def handle_issue_report(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Save user's issue report"""
+    """Forward user's issue report to admins"""
     if context.user_data.get('reporting_issue'):
         user = update.message.from_user
-        issue_data = {
-            "user_id": user.id,
-            "username": user.username or user.first_name,
-            "issue": update.message.text,
-            "timestamp": time.time(),
-            "resolved": False
-        }
+        issue_text = update.message.text
         
-        try:
-            # Ensure data directory exists
-            DATA_DIR.mkdir(exist_ok=True)
-            
-            issues_file = DATA_DIR / "issues.json"
-            
-            # Initialize with empty list if file is empty/corrupted
-            if not issues_file.exists() or issues_file.stat().st_size == 0:
-                with open(issues_file, 'w') as f:
-                    json.dump([], f)
-            
-            # Load existing issues safely
-            with open(issues_file, 'r') as f:
-                try:
-                    issues = json.load(f)
-                except json.JSONDecodeError:
-                    issues = []
-            
-            # Append new issue
-            issues.append(issue_data)
-            
-            # Save back to file
-            with open(issues_file, 'w') as f:
-                json.dump(issues, f, indent=4)
-            
-            await update.message.reply_text("✅ Thank you for reporting the issue! We'll review it shortly.")
-            
-        except Exception as e:
-            print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] [ISSUE_REPORT] Error saving issue: {e}")
-            await update.message.reply_text(
-                "❌ Failed to save your report. Please try again later.",
-                reply_markup=InlineKeyboardMarkup(
-                    [[InlineKeyboardButton("🔙 Contact Developers", callback_data='developers')]]
+        # Get admin IDs from environment
+        ADMIN_IDS = [int(id.strip()) for id in os.getenv('ADMINS', '').split(',') if id.strip()]
+        
+        # Send report to all admins
+        for admin_id in ADMIN_IDS:
+            try:
+                await context.bot.send_message(
+                    chat_id=admin_id,
+                    text=f"🚨 New Issue Reported\n\n"
+                         f"User: {user.full_name} (@{user.username})\n"
+                         f"ID: {user.id}\n\n"
+                         f"Issue: {issue_text}"
                 )
-            )
-        finally:
-            # Clear reporting state
-            if 'reporting_issue' in context.user_data:
-                del context.user_data['reporting_issue']
+            except Exception as e:
+                print(f"Failed to notify admin {admin_id}: {e}")
+
+        await update.message.reply_text("✅ Your issue has been forwarded to the admin team. We'll contact you soon!")
+        
+        # Clear reporting state
+        del context.user_data['reporting_issue']
+
+async def resolve_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Admin command to resolve issues"""
+    ADMIN_IDS = [int(id.strip()) for id in os.getenv('ADMINS', '').split(',') if id.strip()]
+    
+    # Authorization check
+    if update.effective_user.id not in ADMIN_IDS:
+        await update.message.reply_text("❌ Unauthorized access.")
+        return
+    
+    # Validate command format
+    if len(context.args) < 2:
+        await update.message.reply_text("Usage: /resolve <user_id> YOUR ISSUE HAS BEEN RESOLVED!")
+        return
+    
+    user_id, *response_parts = context.args
+    response = ' '.join(response_parts)
+    
+    try:
+        # Send resolution to user
+        await context.bot.send_message(
+            chat_id=int(user_id),
+            text=f"📢 Update on your reported issue:\n\n{response}"
+        )
+        await update.message.reply_text("✅ Response sent to user!")
+    except Exception as e:
+        await update.message.reply_text(f"❌ Failed to send response: {str(e)}")
 
 async def toggle_notifications(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Toggle user's notification preference"""
@@ -894,6 +887,7 @@ def main():
     app.add_handler(CallbackQueryHandler(show_connection, pattern='^connection$'))
     app.add_handler(CallbackQueryHandler(toggle_notifications, pattern='^toggle_notifications$'))
     app.add_handler(CommandHandler('broadcast', broadcast_command))
+    app.add_handler(CommandHandler('resolve', resolve_command))
 
     
     print("✅ BOT IS READY TO ASSIST WITH BRAHMA'25")
