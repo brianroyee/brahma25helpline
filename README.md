@@ -1,51 +1,83 @@
-# Brahma'25 Helpline Bot
+# Brahma'25 Telegram Bot
 
-## Overview
-The **Brahma'25 Navigation Bot** is a Telegram bot designed to assist participants in navigating the Brahma'25 event seamlessly. It provides event schedules, team contact details, and specific event information in an interactive manner.
+## About the Project
+Brahma'25 Helpline Bot is a Telegram bot designed to assist users with event details, schedules, results, and contact information for the Brahma'25 festival. The bot provides an interactive menu-based interface using inline buttons.
 
 ## Features
-- 📅 **Event Schedule Navigation**: View day-wise event listings.
-- 🔧 **Categorized Event Listings**: Filter events based on type (General, Cultural, Technical).
-- 👥 **Contact Organizers**: Get details of the Brahma'25 organizing teams.
-- 🏥 **Emergency Information**: Quick access to medical and discipline teams.
-- 🖼️ **Event Details with Images**: View event descriptions along with relevant images.
+- 📅 View Event Details (General, Cultural, and Technical)
+- 🕗 Check Event Timeline
+- 👥 Contact Organizing Team
+- 🏆 View Event Results
+- 📊 Track Bot Statistics (Admin Feature)
+- 📢 Admin Notifications & Broadcasts
+- ⚠️ Report Issues
+
+## Technologies Used
+- **Python**
+- **Telegram Bot API** (using `python-telegram-bot`)
+- **Flask** (for keeping the bot alive)
+- **dotenv** (for managing environment variables)
+
+## Project Structure
+```
+├── main.py             # Main bot script
+├── keep_alive.py       # Flask server to keep the bot running
+├── requirements.txt    # Python dependencies
+├── data/               # Stores event details and bot statistics
+│   ├── general.json
+│   ├── cultural.json
+│   ├── technical.json
+│   ├── results.json
+│   ├── bot_stats.json
+```
 
 ## Installation & Setup
 
-### Prerequisites
-- Python 3.8+
-- Telegram Bot API Token
-- Required dependencies (install using `pip`):
-  ```bash
-  pip install python-telegram-bot
-  pip install flask
-  ```
-## Commands & Functionalities
+### 1️ Prerequisites
+- Python 3.7+
+- Telegram Bot Token (from BotFather)
 
-### User Commands
-- `/start` - Initiates the bot with a welcome message and menu options.
+### 2️ Clone the repository
+```bash
+git clone https://github.com/your-repo/brahma25-telegram-bot.git
+cd brahma25-telegram-bot
+```
 
-### Callback Queries
-- `📅 Event Schedule` → Navigate through event days.
-- `👥 Contact Team` → View contact details of organizing teams.
-- `🗓️ Day 1 / Day 2 / Day 3` → Explore events scheduled for specific days.
-- `🎭 Cultural Events / 🌐 General Events / 🔧 Technical Events` → View categorized event listings.
-- `📌 [Event Name]` → Get event details including time, venue, and coordinators.
-- `🔙 Back` → Return to the previous menu.
+### 3️ Install Dependencies
+```bash
+pip install -r requirements.txt
+```
 
-   
+### 4️ Setup Environment Variables
+Create a `.env` file and add:
+```
+TOKEN=your_telegram_bot_token
+ADMINS=12345678,98765432  # Admin Telegram IDs (comma-separated)
+```
 
-## Developers & Contributors
-- **BRIAN ROY MATHEW** - Project Lead/ Developer
-- **SREERAMACHANDRAN S MENON** - Developer/ DevOps
-- **ASHWIN P SHINE** - Developer/ Testing
-- **CEEYA SARAH VARGHESE** - Contributor
+### 5️ Run the Bot
+```bash
+python main.py
+```
 
-_Made with <3 by HackClub ASIET_
+## 📡 Deployment
+To keep the bot running continuously, you can:
+- Deploy on **Render**
+- Keep Flask server alive (`keep_alive.py` helps with this)
+
+## 🤝 Developers & Contributors
+
+### Dev Team
+- **Brian Roy Mathew** - Lead Developer
+- **Sreeramachandran S Menon** - DevOps & Deployment
+
+### Contributors
+- **Ashwin P Shine**
+- **Chandra Rajesh**
+- **Deepak M.R.**
+- **Anandhakrishnan**
+- **Ceeya Sarah Varghese** 
 
 ## License
-This project is licensed under the MIT License. Feel free to use, modify, and distribute as needed.
-
-## Contact
-For queries or suggestions, reach out via [GitHub Issues](https://github.com/brianroyee/brahma25helpline/issues) or Telegram.
+This project is licensed under the MIT License.
 
