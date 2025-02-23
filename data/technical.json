@@ -54,8 +54,8 @@
     "VENUE": "Main Ground",
     "IMAGE": "data/posters/roborace.jpeg",
     "LINK": "http://makemypass.com/robo-race",
-    "FEES": "₹300 per head",
-    "SR": "YET TO UPDATE",
+    "FEES": "₹300 per team",
+    "SR": "✅",
     "C1": "Lakshmipriya: <a href=\"https://wa.me/+919188428880\"> WhatsApp</a>",
     "C2": "Adwaith<a href=\"https://wa.me/+919072045546\"> WhatsApp</a>"
   },
@@ -191,12 +191,12 @@
   {
     "EVENT DATE": "Day 2",
     "EVENT NAME": "ROBO SOCCER",
-    "EVENT TIMES": "12:00 PM",
+    "EVENT TIMES": "09:30 AM",
     "VENUE": "Main Ground",
     "IMAGE": "data/posters/robosoccer.jpeg",
     "LINK": "http://makemypass.com/robo-soccer",
-    "FEES": "₹500 per head",
-    "SR": "❌",
+    "FEES": "₹500 per team",
+    "SR": "✅",
     "C1": "<a href=\"https://wa.me/+918714558004\">Aditya (WhatsApp)</a>",
     "C2": "<a href=\"https://wa.me/+916282164898\">Gautham (WhatsApp)</a>"
   },
