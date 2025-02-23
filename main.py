@@ -54,13 +54,14 @@ def update_stats(user_id, command, username=None):
         stats_file = FILES["stats"]
         with open(stats_file, 'r') as f:
             stats = json.load(f)
+        
         # Convert existing list to dictionary if needed
         if isinstance(stats["unique_users"], list):
             stats["unique_users"] = {str(uid): "Anonymous" for uid in stats["unique_users"]}
         
         user_id_str = str(user_id)
         username = username or "Anonymous"
-    
+        
         # Update unique users
         if user_id_str not in stats["unique_users"]:
             stats["total_users"] += 1
@@ -245,37 +246,49 @@ async def show_events(update: Update, context: ContextTypes.DEFAULT_TYPE):
             keyboard.append([InlineKeyboardButton("🔙 Back to Categories", callback_data=f'Day {day[-1]}')])
             reply_markup = InlineKeyboardMarkup(keyboard)
             
-            # Check if the message is text-based before editing
-            if query.message.text:
-                await query.message.edit_text(
-                    f"🎪 *Available {category.capitalize()} Events - {day}:*",
-                    reply_markup=reply_markup,
-                    parse_mode='Markdown'
-                )
-            else:
-                # Send as a new message if original isn't text
-                await context.bot.send_message(
-                    chat_id=query.message.chat_id,
-                    text=f"🎪 *Available {category.capitalize()} Events - {day}:*",
-                    reply_markup=reply_markup,
-                    parse_mode='Markdown'
-                )
+            await query.message.edit_text(
+                f"🎪 *Available {category.capitalize()} Events - {day}:*",
+                reply_markup=reply_markup,
+                parse_mode='Markdown'
+            )
         else:
-            # Handle no events scenario similarly
-            if query.message.text:
-                await query.message.edit_text(
-                    "😅 No events scheduled for this day yet!",
-                    reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back", callback_data=f'Day {day[-1]}')]])
-                )
-            else:
-                await context.bot.send_message(
-                    chat_id=query.message.chat_id,
-                    text="😅 No events scheduled for this day yet!",
-                    reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back", callback_data=f'Day {day[-1]}')]])
-                )
+            await query.message.edit_text(
+                "😅 No events scheduled for this day yet!",
+                reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back", callback_data=f'Day {day[-1]}')]])
+            )
     except telegram.error.BadRequest as e:
         print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] [SHOW_EVENTS] Message edit error: {e}")
-
+        if "There is no text in the message to edit" in str(e):
+            try:
+                # Delete old message if possible
+                try:
+                    await query.message.delete()
+                except:
+                    pass
+                # Send as new message
+                if events:
+                    keyboard = [
+                        [InlineKeyboardButton(f"📌 {event['EVENT NAME']}", 
+                        callback_data=f'details_{category}_{event["EVENT NAME"]}')] 
+                        for event in events
+                    ]
+                    keyboard.append([InlineKeyboardButton("🔙 Back to Categories", callback_data=f'Day {day[-1]}')])
+                    reply_markup = InlineKeyboardMarkup(keyboard)
+                    
+                    await context.bot.send_message(
+                        chat_id=query.message.chat_id,
+                        text=f"🎪 *Available {category.capitalize()} Events - {day}:*",
+                        reply_markup=reply_markup,
+                        parse_mode='Markdown'
+                    )
+                else:
+                    await context.bot.send_message(
+                        chat_id=query.message.chat_id,
+                        text="😅 No events scheduled for this day yet!",
+                        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back", callback_data=f'Day {day[-1]}')]])
+                    )
+            except Exception as new_e:
+                 print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] [SHOW_EVENTS] Message edit error: {e}")    
 
 
 async def show_event_details(update: Update, context: ContextTypes.DEFAULT_TYPE):
