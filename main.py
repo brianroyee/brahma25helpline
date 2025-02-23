@@ -101,7 +101,7 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         [InlineKeyboardButton("🕗 Event Timeline", callback_data='event_timeline')],
         [InlineKeyboardButton("👥 Contact Team", callback_data='coordinators')],
         [InlineKeyboardButton("🏆 Event Results", callback_data='results')],
-#        [InlineKeyboardButton("📊 Bot Status", callback_data='bot_status')],
+        [InlineKeyboardButton("📊 Bot Status", callback_data='bot_status')],
         [InlineKeyboardButton("👨‍💻 Developer Info", callback_data='developers')]
 #        [InlineKeyboardButton("⚠️ Report Issue", callback_data='report_issue')]
     ]
@@ -413,7 +413,7 @@ async def back_to_start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         [InlineKeyboardButton("🕗 Event Timeline", callback_data='event_timeline')],
         [InlineKeyboardButton("👥 Contact Team", callback_data='coordinators')],
         [InlineKeyboardButton("🏆 Event Results", callback_data='results')],
-#        [InlineKeyboardButton("📊 Bot Status", callback_data='bot_status')],
+        [InlineKeyboardButton("📊 Bot Status", callback_data='bot_status')],
         [InlineKeyboardButton("👨‍💻 Developer Info", callback_data='developers')]
 #        [InlineKeyboardButton("⚠️ Report Issue", callback_data='report_issue')]
     ]
@@ -577,7 +577,7 @@ async def show_results(update: Update, context: ContextTypes.DEFAULT_TYPE):
             "❌ Could not retrieve results. Please try again later.",
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back", callback_data='results')]])
         )
-'''
+
 async def show_bot_status(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Display bot status and statistics."""
     query = update.callback_query
@@ -619,15 +619,17 @@ async def show_bot_status(update: Update, context: ContextTypes.DEFAULT_TYPE):
 • Total Downtime: {downtime_hours:.2f} hours
 
 📈 *Command Usage:*
-• Start: {stats["commands_used"]["start"]}
-• Event Details: {stats["commands_used"]["event_details"]}
-• Contact Team: {stats["commands_used"]["contact_team"]}
-• Results: {stats["commands_used"]["results"]}
-• Status Checks: {stats["commands_used"]["bot_status"]}
+• Total Command Initiated: {stats["commands_used"]["start"] + stats["commands_used"]["event_details"] + stats["commands_used"]["contact_team"] + stats["commands_used"]["results"]+ stats["commands_used"]["bot_status"]}
 
 ⚡ *Current Status:* ONLINE
         """
-        
+#• Start: {stats["commands_used"]["start"]}
+#• Event Details: {stats["commands_used"]["event_details"]}
+#• Contact Team: {stats["commands_used"]["contact_team"]}
+#• Results: {stats["commands_used"]["results"]}
+#• Status Checks: {stats["commands_used"]["bot_status"]}
+
+
         keyboard = [[InlineKeyboardButton("🔙 Back to Main Menu", callback_data='start')]]
         reply_markup = InlineKeyboardMarkup(keyboard)
         
@@ -643,7 +645,6 @@ async def show_bot_status(update: Update, context: ContextTypes.DEFAULT_TYPE):
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back", callback_data='start')]]),
             parse_mode='Markdown'
         )
-'''
 
 def record_downtime(is_down=True):
     """Record bot downtime periods."""
@@ -882,7 +883,7 @@ def main():
     app.add_handler(CallbackQueryHandler(back_to_start, pattern='^start$'))
     app.add_handler(CallbackQueryHandler(results_day_selection,pattern='^results$'))
     app.add_handler(CallbackQueryHandler(show_results, pattern='^results_Day [1-3]$'))
-#    app.add_handler(CallbackQueryHandler(show_bot_status, pattern='^bot_status$'))
+    app.add_handler(CallbackQueryHandler(show_bot_status, pattern='^bot_status$'))
     app.add_handler(CallbackQueryHandler(timeline_day_selection, pattern='^event_timeline$'))
     app.add_handler(CallbackQueryHandler(show_timeline, pattern='^timeline_Day [1-3]$'))
 #    app.add_handler(CallbackQueryHandler(prompt_report_issue, pattern='^report_issue$'))
