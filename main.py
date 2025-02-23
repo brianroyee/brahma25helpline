@@ -672,8 +672,8 @@ async def show_developers(update: Update, context: ContextTypes.DEFAULT_TYPE):
     dev_message = """
 
 *DEVELOPERS:*
- `Brian Roy Mathew` // _Lead Dev_
- `Sreeramachandran S Menon` // _DevOps Guy_
+ `Brian Roy Mathew` // _Dev_
+ `Sreeramachandran S Menon` // _DevOps_
 
 
 *CONTRIBUTORS*
