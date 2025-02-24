@@ -136,10 +136,10 @@
         }
     ],
     "commands_used": {
-        "start": 247,
-        "event_details": 206,
-        "contact_team": 59,
+        "start": 248,
+        "event_details": 208,
+        "contact_team": 60,
         "results": 32,
-        "bot_status": 26
+        "bot_status": 18
     }
 }

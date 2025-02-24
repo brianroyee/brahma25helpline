@@ -331,7 +331,7 @@ async def show_event_details(update: Update, context: ContextTypes.DEFAULT_TYPE)
 
 <b>REGISTRATION DETAILS</b>
 
-🔗 <b>Link:</b> <a href="{event["LINK"]}">Register Here</a>  
+🔗 <b>Link:</b> {event["LINK"]}
 💸 <b>Fees:</b> {event["FEES"]}  
 🙋‍♂️ <b>Spot Registration:</b> {event["SR"]}  
 
