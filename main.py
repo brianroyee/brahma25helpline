@@ -7,8 +7,6 @@ import sys
 from pathlib import Path
 from dotenv import load_dotenv
 import os 
-from keep_alive import keep_alive
-keep_alive()
 
 load_dotenv()
 TOKEN= os.getenv('TOKEN')
