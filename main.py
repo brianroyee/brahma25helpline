@@ -256,8 +256,8 @@ async def show_events(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 "😅 No events scheduled for this day yet!",
                 reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back", callback_data=f'Day {day[-1]}')]])
             )
+            
     except telegram.error.BadRequest as e:
-        print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] [SHOW_EVENTS] Message edit error: {e}")
         if "There is no text in the message to edit" in str(e):
             try:
                 # Delete old message if possible
@@ -288,9 +288,9 @@ async def show_events(update: Update, context: ContextTypes.DEFAULT_TYPE):
                         reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back", callback_data=f'Day {day[-1]}')]])
                     )
             except Exception as new_e:
-                 print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] [SHOW_EVENTS] Message edit error: {e}")    
+                print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] [SHOW_EVENTS] Message edit error: {e}")    
 
-
+            
 async def show_event_details(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
@@ -350,10 +350,12 @@ async def show_event_details(update: Update, context: ContextTypes.DEFAULT_TYPE)
             reply_markup = InlineKeyboardMarkup(keyboard)
             
             #delete old message and send new one
+            
             try:
                 await query.message.delete()
             except Exception as e:
                 print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] [EVENT_DETAILS] Error: {e}")
+
             
             if "IMAGE" in event and event["IMAGE"]:
                 try:
