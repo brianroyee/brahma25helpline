@@ -613,17 +613,14 @@ async def show_bot_status(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 👥 *Usage Statistics:*
 • Total Interactions: {stats["total_users"]}
-• Unique Users: {len(stats["unique_users"])}
 
 ⏱️ *Uptime:*
 • Bot Running Since: {uptime_str}
-• Downtime Incidents: {downtime_count}
-• Total Downtime: {downtime_hours:.2f} hours
 
 📈 *Command Usage:*
 • Total Command Initiated: {stats["commands_used"]["start"] + stats["commands_used"]["event_details"] + stats["commands_used"]["contact_team"] + stats["commands_used"]["results"]+ stats["commands_used"]["bot_status"]}
 
-⚡ *Current Status:* ONLINE
+⚡ *Current Status:* Powereshh!
         """
 #• Start: {stats["commands_used"]["start"]}
 #• Event Details: {stats["commands_used"]["event_details"]}
