@@ -1,5 +1,5 @@
 {
-    "total_users": 88,
+    "total_users": 109,
     "unique_users": {
         "6176276853": "Anonymous",
         "2122043816": "Anonymous",
@@ -101,7 +101,28 @@
         "5127080122": "Anonymous",
         "1726078819": "Anonymous",
         "1529423066": "Anonymous",
-        "5823980423": "Anonymous"
+        "5823980423": "Anonymous",
+        "1257379254": "Anonymous",
+        "1118593451": "Anonymous",
+        "1460837863": "Anonymous",
+        "8029200771": "Anonymous",
+        "6425266524": "Anonymous",
+        "1449230783": "Anonymous",
+        "1579879297": "Anonymous",
+        "7166621375": "Anonymous",
+        "7046131653": "Anonymous",
+        "2041975773": "Anonymous",
+        "1706280439": "Anonymous",
+        "1792771202": "Anonymous",
+        "5193975824": "Anonymous",
+        "6289987460": "Anonymous",
+        "1931989356": "Anonymous",
+        "1404100411": "Anonymous",
+        "6912796570": "Anonymous",
+        "5336494707": "Anonymous",
+        "956010010": "Anonymous",
+        "1226582264": "Anonymous",
+        "1861579396": "Anonymous"
     },
     "start_time": 1740118166.6707344,
     "downtime_periods": [
@@ -111,10 +132,10 @@
         }
     ],
     "commands_used": {
-        "start": 113,
-        "event_details": 150,
-        "contact_team": 51,
-        "results": 26,
-        "bot_status": 5
+        "start": 207,
+        "event_details": 190,
+        "contact_team": 59,
+        "results": 31,
+        "bot_status": 15
     }
 }
