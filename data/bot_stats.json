@@ -136,8 +136,8 @@
         }
     ],
     "commands_used": {
-        "start": 248,
-        "event_details": 209,
+        "start": 254,
+        "event_details": 212,
         "contact_team": 60,
         "results": 32,
         "bot_status": 18
