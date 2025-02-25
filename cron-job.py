@@ -11,7 +11,7 @@ import sys
 #os.system('git push origin main')
 
 REPO_PATH = "/home/ssm-user/brahma25helpline"
-FILE_TO_MONITOR = "bot_stats.json"
+FILE_TO_MONITOR = "data/bot_stats.json"
 BRANCH = "main"
 
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
