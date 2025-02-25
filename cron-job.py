@@ -26,7 +26,7 @@ if result.returncode == 0:
     print("No changes detected in the JSON file. Exiting without committing.")
     sys.exit(0)
 
-subprocess.run(["git", "add", FILE_TO_MONITOR], check=True)
+subprocess.run(["git", "add", "--", FILE_TO_MONITOR], check=True)
 
 subprocess.run(["git", "commit", "-m", "[AWS]: Automated JSON Update"], check=True)
 
