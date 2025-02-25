@@ -669,6 +669,7 @@ async def confirm(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
                 f.seek(0)
                 json.dump(data, f, indent=4)
             await query.edit_message_text("✅ Results saved successfully!")
+
         except Exception as e:
             await query.edit_message_text(f"❌ Error saving results: {str(e)}")
     else:
@@ -906,6 +907,37 @@ async def toggle_notifications(update: Update, context: ContextTypes.DEFAULT_TYP
     except Exception as e:
         print(f"Notification error: {e}")
         await query.message.reply_text("❌ Could not update preferences. Please try again.")
+
+async def send_broadcast(context: ContextTypes.DEFAULT_TYPE, message: str):
+    """Helper function to send broadcast messages to all users."""
+    try:
+        with open(FILES["stats"], 'r') as f:
+            stats = json.load(f)
+        
+        success = 0
+        failures = 0
+        
+        if isinstance(stats["unique_users"], list):
+            stats["unique_users"] = {str(uid): "Anonymous" for uid in stats["unique_users"]}
+            
+        for user_id in stats["unique_users"].keys():
+            try:
+                await context.bot.send_message(
+                    chat_id=int(user_id),
+                    text=message,
+                    parse_mode='Markdown'
+                )
+                success += 1
+            except Exception as e:
+                print(f"Error sending to {user_id}: {e}")
+                failures += 1
+                
+        return success, failures
+    except Exception as e:
+        print(f"Broadcast error: {e}")
+        return 0, 0
+
+
 
 async def broadcast_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Admin-only broadcast command"""
