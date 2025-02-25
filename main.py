@@ -2,7 +2,7 @@ import json
 import time
 import telegram
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
-from telegram.ext import Application, CommandHandler, CallbackQueryHandler, ContextTypes, MessageHandler, filters
+from telegram.ext import Application, CommandHandler, CallbackQueryHandler, ContextTypes, MessageHandler, filters, Updater, ConversationHandler, CallbackContext
 import sys
 from pathlib import Path
 from dotenv import load_dotenv
@@ -12,6 +12,7 @@ load_dotenv()
 TOKEN= os.getenv('TOKEN')
 
 sys.path.append("/home/teknikal/Desktop/HC EVENTS/telegram bot")
+GET_EVENT_NAME, GET_EVENT_DAY, SELECT_WINNERS_COUNT, ENTER_WINNERS, CONFIRM = range(5)
 
 #path directory
 DATA_DIR = Path("./data")
@@ -549,7 +550,7 @@ async def show_results(update: Update, context: ContextTypes.DEFAULT_TYPE):
         if day_results:
             message = f"🏆 *Results for {day}*\n\n"
             for result in day_results:
-                message += f" ```{result['EVENT NAME']}```\n"
+                message += f" `{result['EVENT NAME']}`\n"
                 message += f"🥇 1st: {result['WINNER 1']}\n"
                 if result['WINNER 2'].strip():
                     message += f"🥈 2nd: {result['WINNER 2']}\n"
@@ -577,6 +578,106 @@ async def show_results(update: Update, context: ContextTypes.DEFAULT_TYPE):
             "❌ Could not retrieve results. Please try again later.",
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back", callback_data='results')]])
         )
+
+async def addresult(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
+    await update.message.reply_text("📝 Please enter the Event Name:")
+    return GET_EVENT_NAME
+
+async def get_event_name(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
+    context.user_data['event_name'] = update.message.text
+    keyboard = [
+        [InlineKeyboardButton("Day 1", callback_data='Day 1'),
+         InlineKeyboardButton("Day 2", callback_data='Day 2'),
+         InlineKeyboardButton("Day 3", callback_data='Day 3')]
+    ]
+    await update.message.reply_text(
+        "🗓 Select the event day:",
+        reply_markup=InlineKeyboardMarkup(keyboard)
+    )
+    return GET_EVENT_DAY
+
+async def get_event_day(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
+    query = update.callback_query
+    await query.answer()
+    context.user_data['event_day'] = query.data
+    keyboard = [[InlineKeyboardButton(str(i), callback_data=str(i)) for i in [1,2,3]]]
+    await query.edit_message_text("🏆 How many winners?", reply_markup=InlineKeyboardMarkup(keyboard))
+    return SELECT_WINNERS_COUNT
+
+async def select_winners_count(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
+    query = update.callback_query
+    await query.answer()
+    
+    # Get number of winners from button callback
+    num_winners = int(query.data)
+    context.user_data['num_winners'] = num_winners
+    context.user_data['current_winner'] = 1
+    context.user_data['winners'] = []
+    
+    # Prompt for first winner's name
+    await query.edit_message_text(text=f"Enter Winner {context.user_data['current_winner']}'s name:")
+    return ENTER_WINNERS
+
+async def enter_winners(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
+    winner_name = update.message.text
+    context.user_data['winners'].append(winner_name.strip())
+    
+    if context.user_data['current_winner'] < context.user_data['num_winners']:
+        context.user_data['current_winner'] += 1
+        await update.message.reply_text(f"Enter Winner {context.user_data['current_winner']}'s name:")
+        return ENTER_WINNERS
+    
+    # Confirmation message when all winners are collected
+    confirm_msg = (
+        f"CONFIRM RESULTS ⚠️ :\n\n"
+        f"EVENT NAME : {context.user_data['event_name']}\n"
+        f"EVENT DAY  : {context.user_data['event_day']}\n\n"
+        "WINNERS :\n" + "\n".join([f"{i+1}. {name}" for i, name in enumerate(context.user_data['winners'])])
+    )
+    keyboard = [[InlineKeyboardButton("✅ Confirm", callback_data='confirm'), InlineKeyboardButton("✏️ Edit", callback_data='edit')]]
+    await update.message.reply_text(confirm_msg, reply_markup=InlineKeyboardMarkup(keyboard))
+    return CONFIRM
+    
+async def select_winners_count(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
+    query = update.callback_query
+    await query.answer()
+    num_winners = int(query.data)
+    context.user_data['num_winners'] = num_winners
+    context.user_data['current_winner'] = 1
+    context.user_data['winners'] = []
+    await query.edit_message_text(text=f"Enter Winner {context.user_data['current_winner']}'s name:")
+    return ENTER_WINNERS
+
+async def confirm(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
+    query = update.callback_query
+    await query.answer()
+    
+    if query.data == 'confirm':
+        # Save to results.json
+        event_data = {
+            "EVENT NAME": context.user_data['event_name'],
+            "EVENT DATE": context.user_data['event_day'],
+            "WINNER 1": context.user_data['winners'][0] if len(context.user_data['winners']) >=1 else "",
+            "WINNER 2": context.user_data['winners'][1] if len(context.user_data['winners']) >=2 else "",
+            "WINNER 3": context.user_data['winners'][2] if len(context.user_data['winners']) >=3 else ""
+        }
+        
+        try:
+            with open(FILES["results"], 'r+') as f:
+                data = json.load(f)
+                data.append(event_data)
+                f.seek(0)
+                json.dump(data, f, indent=4)
+            await query.edit_message_text("✅ Results saved successfully!")
+        except Exception as e:
+            await query.edit_message_text(f"❌ Error saving results: {str(e)}")
+    else:
+        keyboard = [[InlineKeyboardButton(str(i), callback_data=str(i)) for i in [1,2,3]]]  
+        await query.edit_message_text("🔄 How many winners?", reply_markup=InlineKeyboardMarkup(keyboard))
+        return SELECT_WINNERS_COUNT
+    
+    return ConversationHandler.END
+
 
 async def show_bot_status(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Display bot status and statistics."""
@@ -868,8 +969,27 @@ def main():
     
     # Create the application
     app = Application.builder().token(TOKEN).build()
-    
+
+
+# Updated Conversation Handler
+    conv_handler = ConversationHandler(
+        entry_points=[CommandHandler('addresult', addresult)],
+        states={
+            GET_EVENT_NAME: [MessageHandler(filters.TEXT & ~filters.COMMAND, get_event_name)],
+            GET_EVENT_DAY: [CallbackQueryHandler(get_event_day)],
+            SELECT_WINNERS_COUNT: [CallbackQueryHandler(select_winners_count)],
+            ENTER_WINNERS: [MessageHandler(filters.TEXT & ~filters.COMMAND, enter_winners)],
+            CONFIRM: [CallbackQueryHandler(confirm)]
+        },
+        fallbacks=[],
+        per_chat=True,
+        per_user=True,
+        per_message=False
+    )
+
+
     # Add handlers
+    app.add_handler(conv_handler)
     app.add_handler(CommandHandler('start', start_command))
     app.add_handler(CallbackQueryHandler(day_selection, pattern='^day_selection$'))
     app.add_handler(CallbackQueryHandler(events_menu, pattern='^Day [1-3]$'))
