@@ -74,14 +74,14 @@
   {
     "EVENT DATE": "Day 2",
     "EVENT NAME": "ARCHIVIA",
-    "EVENT TIMES": "09:30 AM",
+    "EVENT TIMES": "02:30 PM",
     "VENUE": "S2 CE Classroom",
     "IMAGE": "data/posters/archivia.jpeg",
     "LINK": "REG CLOSED ❌",
     "FEES": "₹200 per team",
     "SR": "❌",
-    "C1": "<a href=\"https://wa.me/+917012297756\">Aparna (WhatsApp)</a>",
-    "C2": "<a href=\"https://wa.me/+919746485915\">Anna (WhatsApp)</a>"
+    "C1": "Aparna<a href=\"https://wa.me/+917012297756\"> (WhatsApp)</a>",
+    "C2": "Anna<a href=\"https://wa.me/+919746485915\"> (WhatsApp)</a>"
   },
   {
     "EVENT DATE": "Day 2",
@@ -135,7 +135,7 @@
     "EVENT DATE": "Day 2",
     "EVENT NAME": "SQUID GAME",
     "EVENT TIMES": "10:00 AM",
-    "VENUE": "F19",
+    "VENUE": "G07",
     "IMAGE": "data/posters/squidgame.jpeg",
     "LINK": "http://makemypass.com/squid-game",
     "FEES": "₹100 per team",
@@ -182,7 +182,7 @@
   {
     "EVENT DATE": "Day 2",
     "EVENT NAME": "3D SCAPE",
-    "EVENT TIMES": "11:00 AM",
+    "EVENT TIMES": "10:00 AM",
     "VENUE": "CCF Lab 8",
     "IMAGE": "data/posters/3dscape.jpeg",
     "LINK": "http://forms.gle/3daU2JE55SLSzphQ6",
@@ -194,7 +194,7 @@
   {
     "EVENT DATE": "Day 2",
     "EVENT NAME": "ROBO SOCCER",
-    "EVENT TIMES": "09:30 AM",
+    "EVENT TIMES": "11:00 AM",
     "VENUE": "Main Ground",
     "IMAGE": "data/posters/robosoccer.jpeg",
     "LINK": "http://makemypass.com/robo-soccer",
@@ -206,7 +206,7 @@
   {
     "EVENT DATE": "Day 2",
     "EVENT NAME": "OPERATION DARKNOON",
-    "EVENT TIMES": "02:00 PM",
+    "EVENT TIMES": "12:00 PM",
     "VENUE": "Deep Learning and ML Lab",
     "IMAGE": "data/posters/operationdarknoon.jpeg",
     "LINK": "http://makemypass.com/operation-darknoon",
@@ -219,7 +219,7 @@
     "EVENT DATE": "Day 2",
     "EVENT NAME": "ENGRAVEX",
     "EVENT TIMES": "02:00 PM",
-    "VENUE": "EC Project Lab",
+    "VENUE": "EC WORKSHOP",
     "IMAGE": "data/posters/engravex.jpeg",
     "LINK": "http://makemypass.com/engravex",
     "FEES": "₹100 per team",
@@ -243,7 +243,7 @@
     "EVENT DATE": "Day 3",
     "EVENT NAME": "UNITY MASTERY",
     "EVENT TIMES": "09:30 AM",
-    "VENUE": "CCF Lab 8 & 9",
+    "VENUE": "CCF Lab 10 & 11",
     "IMAGE": "data/posters/unity.jpeg",
     "LINK": "CLOSED ❌",
     "FEES": "₹100 per head",
@@ -260,7 +260,7 @@
     "LINK": "https://forms.gle/KrHEp67oj2veTHLj9",
     "FEES": "₹100 per team",
     "SR": "YET TO UPDATE",
-    "C1": "Jeffin <a href=\"https://wa.me/+919188163349\">Paul (WhatsApp)</a>",
-    "C2": "Alfiya M <a href=\"https://wa.me/+919744421579\">S (WhatsApp)</a>"
+    "C1": "Jeffin Paul<a href=\"https://wa.me/+919188163349\"> (WhatsApp)</a>",
+    "C2": "Alfiya M <sa href=\"https://wa.me/+919744421579\"> (WhatsApp)</a>"
   }
 ]
