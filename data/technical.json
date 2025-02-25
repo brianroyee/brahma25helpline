@@ -7,7 +7,7 @@
     "IMAGE": "data/posters/autoshowcase.jpeg",
     "LINK": "nil",
     "FEES": "nil",
-    "SR": "✅",
+    "SR": "X",
     "C1": "Sharon: <a href=\"https://wa.me/+917902819113\"> WhatsApp</a>",
     "C2": "Adhil: <a href=\"https://wa.me/+919562371929\"> WhatsApp</a>"
   },
@@ -50,7 +50,7 @@
   {
     "EVENT DATE": "Day 2",
     "EVENT NAME": "ROBO RACE",
-    "EVENT TIMES": "09:30 AM",
+    "EVENT TIMES": "11:00 AM",
     "VENUE": "Main Ground",
     "IMAGE": "data/posters/roborace.jpeg",
     "LINK": "http://makemypass.com/robo-race",
@@ -243,7 +243,7 @@
     "EVENT DATE": "Day 3",
     "EVENT NAME": "UNITY MASTERY",
     "EVENT TIMES": "09:30 AM",
-    "VENUE": "CCF Lab 10 & 11",
+    "VENUE": "CCF Lab 8 & 9",
     "IMAGE": "data/posters/unity.jpeg",
     "LINK": "CLOSED ❌",
     "FEES": "₹100 per head",
