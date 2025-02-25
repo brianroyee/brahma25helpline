@@ -183,10 +183,10 @@
         }
     ],
     "commands_used": {
-        "start": 525,
-        "event_details": 675,
+        "start": 529,
+        "event_details": 676,
         "contact_team": 81,
         "results": 47,
-        "bot_status": 103
+        "bot_status": 104
     }
 }
