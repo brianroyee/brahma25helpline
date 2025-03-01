@@ -1,3 +1,37 @@
 [
-
+    {
+        "EVENT NAME": "IDEATHON",
+        "EVENT DATE": "Day 1",
+        "WINNER 1": "Sooryakrishna P R, Jyothis Mariya Joy, Sreemadhav S, Sreeram R (Christ College of Engineering)",
+        "WINNER 2": "Athul Krishna N S, Govindh Pradeep, Nizam P M, Abijith C P (ADI SHANKARA INSTITUTE OF ENGINEERING AND TECHNOLOGY)",
+        "WINNER 3": ""
+    },
+    {
+        "EVENT NAME": "GPTALES",
+        "EVENT DATE": "Day 1",
+        "WINNER 1": "MOHAMED RAZIN MUJEEB (ADI SHANKARA INSTITUTE OF ENGINEERING AND TECHNOLOGY)",
+        "WINNER 2": "ANANDHAKRISHNAN P S (ADI SHANKARA INSTITUTE OF ENGINEERING AND TECHNOLOGY)",
+        "WINNER 3": ""
+    },
+    {
+        "EVENT NAME": "RAGAM",
+        "EVENT DATE": "Day 1",
+        "WINNER 1": "MEERA M NAIR (RLV COLLEGE OF MUSIC AND FINE ARTS, TRIPUPUNITHURA)",
+        "WINNER 2": "ROHITH ANEESH (SREE SANKARACHARYA UNIVERSITY OF SANSKRIT)",
+        "WINNER 3": ""
+    },
+    {
+        "EVENT NAME": "MIME",
+        "EVENT DATE": "Day 1",
+        "WINNER 1": "GPTC PERUMBAVOOR (GPTC PERUMBAVOOR)",
+        "WINNER 2": "RHYTHM OF INVICIBLES (ST. GEORGE'S COLLEGE ALUVA)",
+        "WINNER 3": ""
+    },
+    {
+        "EVENT NAME": "THEME SHOW",
+        "EVENT DATE": "Day 1",
+        "WINNER 1": "MAYA (ADI SHANKARA INSTITUTE OF ENGINEERING AND TECHNOLOGY)",
+        "WINNER 2": "KALAM VARNA (DREAM ZONE)",
+        "WINNER 3": "StyFa (Nehru Arts and Science college, Coimbatore)"
+    }
 ]
