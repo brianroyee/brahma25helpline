@@ -7,6 +7,7 @@ import sys
 from pathlib import Path
 from dotenv import load_dotenv
 import os 
+import urllib.parse
 
 load_dotenv()
 TOKEN= os.getenv('TOKEN')
@@ -343,7 +344,8 @@ async def show_event_details(update: Update, context: ContextTypes.DEFAULT_TYPE)
             
             #back button to return to events list
             back_callback = f'{category}_{event_day}'
-            keyboard = [[InlineKeyboardButton("🔙 Back to Events", callback_data=back_callback)]
+            keyboard = [[InlineKeyboardButton("🔙 Back to Events", callback_data=back_callback)],
+                         [InlineKeyboardButton("📤 Share via WhatsApp", callback_data=f'share_whatsapp_{category}_{event_name}')]
 #                        [InlineKeyboardButton("⚠️ Report Issue", callback_data='report_issue')]
                         ]
             reply_markup = InlineKeyboardMarkup(keyboard)
@@ -402,6 +404,65 @@ async def show_event_details(update: Update, context: ContextTypes.DEFAULT_TYPE)
             )
         except Exception as inner_e:
             print(f"Failed to send error message: {inner_e}")
+
+async def handle_whatsapp_share(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+    
+    try:
+        # Split the callback_data using the delimiter '|'
+        _, category, event_name = query.data.split('|', 2)
+    except ValueError:
+        await query.message.reply_text("❌ Invalid share request. Please try again.")
+        return
+    
+    # Debugging: Print the parsed values
+    print(f"Category: {category} | Event Name: {event_name}")
+    
+    # Fetch event details
+    file_path = FILES.get(category)
+    if not file_path or not file_path.exists():
+        await query.message.reply_text("❌ Event data file not found.")
+        return
+    
+    try:
+        with open(file_path, "r") as file:
+            events = json.load(file)
+    except (json.JSONDecodeError, FileNotFoundError) as e:
+        await query.message.reply_text(f"❌ Data error: {str(e)}")
+        return
+    
+    # Case-insensitive search for the event
+    event = next(
+        (e for e in events if e["EVENT NAME"].strip().lower() == event_name.strip().lower()),
+        None
+    )
+    
+    if not event:
+        await query.message.reply_text("❌ Event not found in database.")
+        return
+    
+    # Construct the WhatsApp share message
+    share_text = (
+        f"*{event['EVENT NAME']}*\n\n"
+        f"📍 *Venue:* {event['VENUE']}\n"
+        f"🗓️ *Date:* {event['EVENT DATE']}\n"
+        f"⏰ *Time:* {event['EVENT TIMES']}\n"
+        f"🔗 *Registration Link:* {event['LINK']}\n\n"
+        f"_{event.get('IMAGE', '')}_"  # Include image URL if available
+    )
+    
+    # URL-encode the message
+    encoded_text = urllib.parse.quote(share_text)
+    whatsapp_url = f"https://wa.me/?text={encoded_text}"
+    
+    # Send the link to the user
+    keyboard = [[InlineKeyboardButton("Open WhatsApp", url=whatsapp_url)]]
+    await query.message.reply_text(
+        "Click below to share on WhatsApp 👇",
+        reply_markup=InlineKeyboardMarkup(keyboard)
+    )
+    
 
 
 async def back_to_start(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -1040,8 +1101,10 @@ def main():
     app.add_handler(CallbackQueryHandler(show_developers, pattern='^developers$'))
     app.add_handler(CallbackQueryHandler(show_connection, pattern='^connection$'))
     app.add_handler(CallbackQueryHandler(toggle_notifications, pattern='^toggle_notifications$'))
+    app.add_handler(CallbackQueryHandler(handle_whatsapp_share, pattern='^share_whatsapp'))
     app.add_handler(CommandHandler('broadcast', broadcast_command))
     app.add_handler(CommandHandler('resolve', resolve_command))
+ 
 
     
     print("✅ BOT IS READY TO ASSIST WITH BRAHMA'25")
